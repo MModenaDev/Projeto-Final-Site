@@ -1,0 +1,8 @@
+.placesdesk {
+  min-height: 100vh;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+  margin-top: 24.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
