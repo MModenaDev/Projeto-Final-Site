@@ -7,20 +7,43 @@ class Navbar extends Component {
     super(props)
 
     this.state = {
-      arrowAction : true
+      arrowAction : true,
+      isTop: true,
     }
   }
 
+  componentDidMount() {
+    document.addEventListener('scroll', () => {
+      const isTop = window.scrollY < document.documentElement.clientHeight;
+      if (isTop !== this.state.isTop) {
+        this.setState({ isTop })
+        this.changeColor()
+      }
+    });
+  }
+
+  changeColor(){
+    this.nav = document.getElementById("nav")
+    if(this.state.isTop){
+      console.log('cor')
+      this.nav.classList.remove('navbar-scrolled')
+    } else this.nav.classList.add('navbar-scrolled')
+  }
+
+  
 
   changeArrow(){
+    this.nav = document.getElementById('nav2')
     this.arrowButton = document.getElementById("arrow")
-     console.log(this.state.arrowAction)
     if(this.state.arrowAction){
       this.arrowButton.src = "./images/angle-arrow-down.png"
+      this.nav.classList.remove('nav2-changes')
       this.setState({
         arrowAction : false
       })
-    } else {this.arrowButton.src = "./images/up-arrow.png"
+    } else {
+      this.nav.classList.add('nav2-changes')
+      this.arrowButton.src = "./images/up-arrow.png"
     this.setState({
       arrowAction : true
     })
@@ -31,11 +54,14 @@ class Navbar extends Component {
 
   render(){
     return(
-      <div className='container-fluid navbar fixed-top'>
+      <div id="nav" className='container-fluid navbar fixed-top'>
         <div className="row">
           <div className="col-12 col-md-8">
             <div className="row d-flex align-items-center">
-              <div onClick={() => this.changeArrow()} className="col-2 col-md-2 text-center p-0">
+              < div className="col-2 col-md-2 text-center p-0 d-none d-md-block">
+                LOGO
+              </div>
+              <div onClick={() => this.changeArrow()} className="col-2 col-md-2 text-center p-0 d-md-none">
                 LOGO
               </div>
               <div onClick={() => this.changeArrow()} className="col-1 arrows d-flex d-md-none justify-content-left p-0">
@@ -59,6 +85,13 @@ class Navbar extends Component {
                 Login
               </div>
             </div>
+          </div>
+        </div>
+        <div id="nav2" className="col-4 p-0 nav2-changes">
+          <div className="row d-flex align-items-center">
+            <div className="col-12 d-flex justify-content-center">Homes</div>
+            <div className="col-12 d-flex justify-content-center">Plans</div>
+            <div className="col-12 d-flex justify-content-center">About</div>
           </div>
         </div>
       </div>

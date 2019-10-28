@@ -1,9 +1,29 @@
 .navbar {
-  background-color: rgba(0, 0, 255, 0);
   height: 5rem;
   color: white;
   font-weight: bold;
+  transition: 500ms ease;
+  background-color: transparent;
 }
+
+.navbar-scrolled{
+  background-color: white;
+}
+
+.nav2-changes {
+  height: 0vh !important;
+  opacity: 0 !important;
+}
+
+#nav2 {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  height: 50vh;
+  transition: .5s;
+  opacity: 1;
+
+}
+
 
 .row {
   margin: 0;

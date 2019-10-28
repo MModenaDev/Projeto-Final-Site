@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Header.css'
+import Login from '../login/Login'
 
 class Header extends Component {
   render(){
@@ -32,31 +33,10 @@ class Header extends Component {
                 </button>
               </div>
               <div class="modal-body row d-flex justify-content-center">
-                <div className="col-12">
-                  Faça seu Login
-                </div>
-                <div className="col-12 my-2">  
-                  <button className='btn btn-face d-flex'>
-                    <img className='icos-fac' src="./images/facebookico.png" alt=""/>
-                    <span className='btn-textface'> Facebook</span>
-                  </button>
-                </div>
-                <div className="col-12 my-2">
-                <button className='btn btn-google d-flex'>
-                    <img className='icos-goo' src="./images/googleico.png" alt=""/>
-                    <span className='btn-textgoog'> Google</span>
-                  </button>
-                </div>
-                <div className="col-12">
-                  <div className="row">
-                    <div className="col-4"></div>
-                    <div className="col-4"></div>
-                    <div className="col-4"></div>
-                  </div>
-                </div>
+                <Login />
 
               </div>
-            </div>
+              </div>
           </div>
         </div>
       </div>
