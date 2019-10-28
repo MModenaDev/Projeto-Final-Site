@@ -4,6 +4,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 class CreateHouse extends Component {
   render(){
     return(
+      
+
+
+
       <div className="container-fluid howto">
         <div className="row d-flex justify-content-center">
           <div className="col-12 text-center pt-md-5">
