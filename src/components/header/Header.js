@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Header.css'
+import Login from '../login/Login'
+import DoSignin from '../doSignin/doSignin'
 
 class Header extends Component {
   render(){
@@ -17,46 +19,30 @@ class Header extends Component {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor harum facilis eum deserunt?
                 </p>
                 
-                <button data-toggle="modal" data-target="#exampleModalScrollable" type="button" class="btn btn-header">Faça seu login!</button>
+                <button data-toggle="modal" data-target="#exampleModalScrollable" type="button" className="btn btn-header">Faça seu login!</button>
                 
               </div>
             </div> 
           </div>
         </div>
-        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content row">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div className="modal fade" id="exampleModalScrollable" tabIndex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+          <div className="modal-dialog modal-dialog-scrollable" role="document">
+            <div className="modal-content row">
+              <div className="modal-header">
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+<<<<<<< HEAD
+              <div className="modal-body row d-flex justify-content-center">
+                <Login />
+=======
               <div class="modal-body row d-flex justify-content-center">
-                <div className="col-12">
-                  Faça seu Login
-                </div>
-                <div className="col-12 my-2">  
-                  <button className='btn btn-face d-flex'>
-                    <img className='icos-fac' src="./images/facebookico.png" alt=""/>
-                    <span className='btn-textface'> Facebook</span>
-                  </button>
-                </div>
-                <div className="col-12 my-2">
-                <button className='btn btn-google d-flex'>
-                    <img className='icos-goo' src="./images/googleico.png" alt=""/>
-                    <span className='btn-textgoog'> Google</span>
-                  </button>
-                </div>
-                <div className="col-12">
-                  <div className="row">
-                    <div className="col-4"></div>
-                    <div className="col-4"></div>
-                    <div className="col-4"></div>
-                  </div>
-                </div>
+                <DoSignin />
+>>>>>>> 305fa395fd9bae019e0dca6d1d78834dd96a70b4
 
               </div>
-            </div>
+              </div>
           </div>
         </div>
       </div>

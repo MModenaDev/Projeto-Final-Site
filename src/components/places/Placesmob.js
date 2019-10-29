@@ -7,7 +7,7 @@ class Placesmob extends Component {
  
   render(){
     return(
-      <div className="container-fluid d-flex d-md-none placesmob pt-5 mt-3">
+      <div className="container-fluid d-flex d-md-none placesmob pt-5 mt-3 pb-4">
         <div className="row">
           <div className="col-12">
             <h1>Regiões</h1>

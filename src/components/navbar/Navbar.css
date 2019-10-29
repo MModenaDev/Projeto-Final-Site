@@ -1,9 +1,44 @@
 .navbar {
-  background-color: rgba(0, 0, 255, 0);
   height: 5rem;
   color: white;
   font-weight: bold;
+  transition: 500ms ease;
+  background-color: transparent;
 }
+
+.navbar a {
+  color: white;
+}
+
+.navbar-scrolled{
+  background-color: white;
+  color:  #FB5D30;
+}
+
+.navbar-scrolled a {
+  color:  #FB5D30;
+}
+
+
+.nav2-changes {
+  height: 0vh !important;
+  opacity: 0 !important;
+}
+
+#nav2 {
+  background-color: rgb(255, 255, 255);
+  color: #FB5D30;
+  height: 100vh;
+  width: 100vw;
+  transition: .5s;
+  opacity: 1;
+}
+
+#nav2 a {
+  color: #FB5D30;
+  text-decoration: none;
+}
+
 
 .row {
   margin: 0;

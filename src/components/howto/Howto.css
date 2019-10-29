@@ -5,9 +5,11 @@
 }
 
 .howto-img img {
-  width: 23px;
-  height: 23px;
+  width: 53px;
+  height: 53px;
 }
+
+
 
 .howto h1 {
 font-family: Roboto;
@@ -34,4 +36,13 @@ font-size: 16px;
 line-height: 19px;
 text-align: center;
 color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .howto-img img {
+    width: 23px;
+    height: 23px;
+  }
+
+
 }

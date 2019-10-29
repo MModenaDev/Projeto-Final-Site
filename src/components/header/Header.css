@@ -37,51 +37,6 @@
   color: #FB5D30;
 }
 
-.btn-face {
-  color: white;
-  background: #316BFE;
-  border-radius: 5px;
-  width: 100%;
-  height: 45px;
-}
-
-.btn-face:hover {
-  color: white;
-}
-
-.btn-google {
-  color: black;
-  background-color: white;
-  border-radius: 5px;
-  width: 100%;
-  height: 45px;
-  border: 1.4px solid #333333;
-}
-
-.icos-fac {
-  width: 12px;
-  height: 20px;
-  justify-content: flex-end;
-  display: flex;
-}
-
-.icos-goo {
-  width: 20px;
-  height: 20px;
-  justify-content: flex-end;
-  display: flex;
-}
-
-.btn-textface {
-  position: absolute;
-  left: 42%;
-}
-
-.btn-textgoog {
-  position: absolute;
-  left: 43%;
-}
-
 @media screen and (max-width: 768px) {
   .header{
       background-position: 60%;
