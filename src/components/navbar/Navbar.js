@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 
 class Navbar extends Component {
   constructor(props){
@@ -66,8 +67,8 @@ class Navbar extends Component {
         <div className="row">
           <div className="col-12 col-md-8">
             <div className="row d-flex align-items-center">
-              < div className="col-2 col-md-2 text-center p-0 d-none d-md-block">
-                LOGO
+              <div className="col-2 col-md-2 text-center p-0 d-none d-md-block">
+                <Link to="/">LOGO</Link>
               </div>
               <div onClick={() => this.changeArrow()} className="col-2 col-md-2 text-center p-0 d-md-none">
                 LOGO

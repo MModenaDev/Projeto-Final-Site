@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Homecitydesk.css'
 
-const Homecitydesk= (props) => {
+const Homecitydesk = (props) => {
     return(
       <div className="col-3 homecitydesk d-flex align-items-center justify-content-center">
         <video autoPlay muted loop id="myVideo">

@@ -7,11 +7,11 @@ import Placesdesk from './components/places/Placesdesk'
 import Placesmob from './components/places/Placesmob'
 import Review from './components/review/Reviews';
 import Map from './components/map/map'
+import Footer from './components/footer/Footer'
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <Header />
       <Howto />
       <Placesdesk />

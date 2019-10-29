@@ -33,13 +33,8 @@ class Header extends Component {
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-<<<<<<< HEAD
               <div className="modal-body row d-flex justify-content-center">
-                <Login />
-=======
-              <div class="modal-body row d-flex justify-content-center">
                 <DoSignin />
->>>>>>> 305fa395fd9bae019e0dca6d1d78834dd96a70b4
 
               </div>
               </div>
