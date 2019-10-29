@@ -17,15 +17,15 @@ class Howto extends Component {
           <div className="col-12 text-center">
             <h2>Queremos proporcionar ao nosso usuário uma experiência única, desde o agendamento até a hospedagem</h2>
           </div>
-          <div className="col-12 d-flex justify-content-center howto-img">
+          <div className="col-12 col-md-4 d-flex justify-content-center howto-img">
             <img src="./images/backpack.png" alt=""/>
             <p className="pl-4">Faça suas malas</p>
           </div>
-          <div className="col-12 d-flex justify-content-center howto-img">
+          <div className="col-12 col-md-4 d-flex justify-content-center howto-img">
             <img src="./images/plane.png" alt=""/>
             <p className="pl-4 text-break">Escolha um local ao redor do mundo</p>
           </div>
-          <div className="col-12 d-flex justify-content-center howto-img">
+          <div className="col-12 col-md-4 d-flex justify-content-center howto-img">
             <img src="./images/worldwide.png" alt=""/>
             <p className="pl-4">Viva novas experiências</p>
           </div>

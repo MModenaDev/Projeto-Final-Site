@@ -18,21 +18,21 @@ class Header extends Component {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor harum facilis eum deserunt?
                 </p>
                 
-                <button data-toggle="modal" data-target="#exampleModalScrollable" type="button" class="btn btn-header">Faça seu login!</button>
+                <button data-toggle="modal" data-target="#exampleModalScrollable" type="button" className="btn btn-header">Faça seu login!</button>
                 
               </div>
             </div> 
           </div>
         </div>
-        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content row">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div className="modal fade" id="exampleModalScrollable" tabIndex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+          <div className="modal-dialog modal-dialog-scrollable" role="document">
+            <div className="modal-content row">
+              <div className="modal-header">
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body row d-flex justify-content-center">
+              <div className="modal-body row d-flex justify-content-center">
                 <Login />
 
               </div>

@@ -33,18 +33,26 @@ class Navbar extends Component {
   
 
   changeArrow(){
+    this.body = document.getElementsByTagName("BODY")[0];
+    this.nav1 = document.getElementById('nav')
     this.nav = document.getElementById('nav2')
     this.arrowButton = document.getElementById("arrow")
     if(this.state.arrowAction){
+      this.nav1.classList.add('navbar-scrolled')
       this.arrowButton.src = "./images/angle-arrow-down.png"
       this.nav.classList.remove('nav2-changes')
+      this.body.style.overflow = "hidden"
       this.setState({
         arrowAction : false
       })
     } else {
+      this.nav1.classList.remove('navbar-scrolled')
       this.nav.classList.add('nav2-changes')
       this.arrowButton.src = "./images/up-arrow.png"
-    this.setState({
+      this.body.style.overflow = "visible"
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0;
+      this.setState({
       arrowAction : true
     })
   }
@@ -72,7 +80,9 @@ class Navbar extends Component {
               </div>
               <div className="col-4 d-none d-md-flex">
                 <div className="row d-flex align-items-center">
-                  <div className="col-4">Homes</div>
+                  <div className="col-4">
+                    <a href="/">Homes</a>
+                  </div>
                   <div className="col-4">Plans</div>
                   <div className="col-4">About</div>
                 </div>
@@ -87,9 +97,11 @@ class Navbar extends Component {
             </div>
           </div>
         </div>
-        <div id="nav2" className="col-4 p-0 nav2-changes">
+        <div id="nav2" className="col-12 p-0 nav2-changes">
           <div className="row d-flex align-items-center">
-            <div className="col-12 d-flex justify-content-center">Homes</div>
+            <div className="col-12 d-flex justify-content-center">
+              <a href="/">Homes</a>
+            </div>
             <div className="col-12 d-flex justify-content-center">Plans</div>
             <div className="col-12 d-flex justify-content-center">About</div>
           </div>
