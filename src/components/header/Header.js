@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Header.css'
 import Login from '../login/Login'
+import DoSignin from '../doSignin/doSignin'
 
 class Header extends Component {
   render(){
@@ -18,7 +19,7 @@ class Header extends Component {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor harum facilis eum deserunt?
                 </p>
                 
-                <button data-toggle="modal" data-target="#exampleModalScrollable" type="button" class="btn btn-header">Faça seu login!</button>
+                <button data-toggle="modal" data-target="#exampleModalScrollable" type="button" className="btn btn-header">Faça seu login!</button>
                 
               </div>
             </div> 
@@ -33,7 +34,7 @@ class Header extends Component {
                 </button>
               </div>
               <div class="modal-body row d-flex justify-content-center">
-                <Login />
+                <DoSignin />
 
               </div>
               </div>
