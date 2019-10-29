@@ -9,7 +9,7 @@ AOS.init();
 class Howto extends Component {
   render(){
     return(
-      <div data-aos="fade-right" className="container-fluid howto">
+      <div className="container-fluid howto">
         <div className="row d-flex justify-content-center">
           <div className="col-12 text-center pt-md-5">
             <h1>Como usar o NSA</h1>
