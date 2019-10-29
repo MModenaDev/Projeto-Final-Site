@@ -1,0 +1,15 @@
+.dashboard-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.menu-logo {
+    display: flex;
+    align-content: center;
+}
+
+.dashboard-menu button {
+    margin: 10px;
+}

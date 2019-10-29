@@ -6,14 +6,17 @@ import Howto from './components/howto/Howto'
 import Placesdesk from './components/places/Placesdesk'
 import Placesmob from './components/places/Placesmob'
 
+import Admin from './components/admin/Admin'
+
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar />
       <Header />
       <Howto />
       <Placesdesk />
-      <Placesmob />
+      <Placesmob /> */}
+      <Admin></Admin>
     </div>  
   );
 }
