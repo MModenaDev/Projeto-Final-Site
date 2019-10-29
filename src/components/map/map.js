@@ -71,8 +71,6 @@ class MapGoogle extends React.Component {
               <h1>{this.state.selectedStore.name}</h1>
             </div>
         </InfoWindow>
-
-
         </Map>
     )
   }
