@@ -9,21 +9,15 @@ class Header extends Component {
     return(
       <div className="container-fluid pre-header">
         <div className="row d-flex justify-content-start header">
-          <div className="col-12 col-md-6">
-            <div className="row d-flex align-items-center">
-              <div className="col-12 d-flex flex-column align-items-center justify-content-center">
-                <p className="home-title">
-                  DISCOVER
-                </p>
-                <p className="home-subtitle">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor harum facilis eum deserunt?
-                </p>
-                
-                <button data-toggle="modal" data-target="#exampleModalScrollable" type="button" className="btn btn-header">Faça seu login!</button>
-                
-              </div>
-            </div> 
-          </div>
+          <div className="home-content">
+            <h1 className="home-title">DISCOVER</h1>
+            <p className="home-subtitle">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+            </p>
+
+            <p className="home-preLogin">Se você já possui uma conta</p>
+            <button data-toggle="modal" data-target="#exampleModalScrollable" type="button" className="btn btn-header">Faça seu login</button>      
+          </div>        
         </div>
         <div className="modal fade" id="exampleModalScrollable" tabIndex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
           <div className="modal-dialog modal-dialog-scrollable" role="document">
@@ -34,7 +28,7 @@ class Header extends Component {
                 </button>
               </div>
               <div className="modal-body row d-flex justify-content-center">
-                <DoSignin />
+                <Login />
 
               </div>
               </div>

@@ -1,48 +1,145 @@
-.howto {
-  height: 60vh;
-  box-shadow:  0px 4px 5px rgba(0, 0, 0, 0.25);
+.howto-container {
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -10rem;
+  padding-bottom: 6rem;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  position: relative;
 }
 
-.howto-img img {
-  width: 73px;
-  height: 73px;
+.howto-container::before {
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  top: -14px;
+  content: '';
+  background-color: #fff;
 }
 
-
-
-.howto h1 {
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 25px;
-line-height: 29px;
-color: #FB5D30;
+.howto__title {
+  font-size: 4.6rem;
+  font-weight: 900;
+  color: #FB5D30;
+  margin-bottom: 4rem;
 }
 
-.howto h2 {
-font-style: normal;
-font-weight: normal;
-font-size: 1rem;
-line-height: 20px;
-text-align: center;
-color: #828282;
+.howto__description {
+  width: 74rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #828282;
+  margin-bottom: 5rem;
 }
 
-.howto p {
-font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 19px;
-text-align: center;
-color: black;
+.howto__card-container {
+  display: flex;
+  width: 85rem;
+  justify-content: space-between;
 }
 
-@media screen and (max-width: 768px) {
-  .howto-img img {
-    width: 23px;
-    height: 23px;
+.howto__card-container--card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.howto__card-container--card-img {
+  margin-bottom: 2.5rem;
+}
+
+.howto__card-container--card-text {
+  font-size: 2rem;
+  color: #333;
+  width: 20rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 1500px) {
+  .howto-container {
+    margin-top: -6rem;
+  }
+}
+
+@media screen and (max-width: 780px) {
+
+  .howto__description {
+    width: 60rem;
   }
 
+  .howto__card-container {
+    width: 70rem;
+  }
 
+  .howto__card-container--card-img {
+    width: 10rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .howto-container {
+    margin-top: -7rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .howto__title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #FB5D30;
+    margin-bottom: 1.5rem;
+  }
+
+  .howto__description {
+    width: 32rem;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .howto__card-container {
+    width: 32rem;
+    flex-direction: column;
+  }
+
+  .howto__card-container--card {
+    margin: 0 auto 2rem auto;
+    flex-direction: row;
+    width: 21rem;
+    /* justify-content: space-between; */
+    justify-content: center;
+  }
+
+  .howto__card-container--card-img {
+    width: 3rem;
+    margin: 0;
+    position: absolute;
+    left: -4rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .howto__img-fix1 {
+    left: -2.5rem;
+  }
+
+  .howto__img-fix3 {
+    left: -1rem;
+  }
+
+  .howto__card-container--card-text {
+    margin: 0;
+    font-size: 1.6rem;
+    width: 16rem;
+    text-align: center;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .howto__description {
+    width: 31rem;
+  }
 }

@@ -8,7 +8,7 @@ class Home extends Component {
       <div className="container-fluid">
         <div className="row">
           <div className="col-12 head-home fixed-top-1">
-
+            <h2></h2>
           </div>
         </div>
       </div>
