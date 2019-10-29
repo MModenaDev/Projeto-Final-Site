@@ -1,8 +1,9 @@
 .placesmob {
-  min-height: 100vh;
   height: auto;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
   background-color: white;
+  margin: 2.5rem 0;
+  padding: 3rem 0;
 }
 
 .placesmob h1 {
