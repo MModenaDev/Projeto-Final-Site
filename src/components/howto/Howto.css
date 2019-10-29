@@ -59,6 +59,12 @@
   align-items: center;
 }
 
+@media screen and (max-width: 1500px) {
+  .howto-container {
+    margin-top: -6rem;
+  }
+}
+
 @media screen and (max-width: 780px) {
 
   .howto__description {

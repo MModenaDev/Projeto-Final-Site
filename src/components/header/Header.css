@@ -77,7 +77,26 @@
   text-shadow: 2px 2px 4px rgba(0,0,0, .2);
 }
 
+@media screen and (max-width: 1500px) {
+  .home-content {
+    top: 16rem;
+    left: 10%;
+  }
 
+  .home-title {
+    font-size: 8rem;
+  }
+
+  .home-subtitle {
+    font-size: 2rem;
+    width: 42rem;
+    margin-bottom: 4rem;;
+  }
+
+  .home-preLogin {
+    font-size: 1.6rem;
+  }
+}
 
 @media screen and (max-width: 1100px) {
   .home-content {
