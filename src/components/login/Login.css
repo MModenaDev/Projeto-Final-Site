@@ -43,3 +43,51 @@
   position: absolute;
   left: 43%;
 }
+
+.line {
+  margin: 2rem 0;
+}
+
+.lineGray {
+  width: 100%;
+  border: gray solid 0.5px;
+  height: 0.01px;
+  position: relative;
+}
+
+.textLine {
+  position: absolute;
+  background-color: white;
+  padding: 1%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.btn-login {
+  background-color: #FB5D30;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  height: 45px;
+  margin: 15px 0;
+  font-weight: bold;
+  justify-content: center;
+  border: 1px solid #FB5D30;
+}
+
+.mousePointer {
+  cursor: pointer;
+  color: #FB5D30;
+}
+
+.btn-login:hover {
+  background-color: white;
+  color: #FB5D30;
+}
+
+.linkSignin {
+  cursor: pointer;
+  color: #FB5D30;
+}

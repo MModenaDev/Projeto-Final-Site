@@ -1,5 +1,4 @@
 import React from 'react';
-import Axios from 'axios';
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import MapStyles from './mapStyle'
 
@@ -72,8 +71,6 @@ class MapGoogle extends React.Component {
               <h1>{this.state.selectedStore.name}</h1>
             </div>
         </InfoWindow>
-
-
         </Map>
     )
   }
@@ -81,5 +78,5 @@ class MapGoogle extends React.Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: `AIzaSyB36sT0tIu-0uCfJR1zWHsD8Ku1d5mKLrA`
+  apiKey: process.env.GOOGLE_KEY
 })(MapGoogle);

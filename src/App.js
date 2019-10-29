@@ -6,6 +6,7 @@ import Howto from './components/howto/Howto'
 import Placesdesk from './components/places/Placesdesk'
 import Placesmob from './components/places/Placesmob'
 import Review from './components/review/Reviews';
+import Map from './components/map/map'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Placesdesk />
       <Placesmob />
       <Review />
+      <Map />
     </div>  
   );
 }
