@@ -1,0 +1,83 @@
+.navbar {
+  height: 5rem;
+  color: white;
+  font-weight: bold;
+  transition: 500ms ease;
+  background-color: transparent;
+}
+
+.navbar a {
+  color: white;
+}
+
+.navbar-scrolled{
+  background-color: white;
+  color:  #FB5D30;
+}
+
+.navbar-scrolled a {
+  color:  #FB5D30;
+}
+
+
+.nav2-changes {
+  height: 0vh !important;
+  opacity: 0 !important;
+}
+
+#nav2 {
+  background-color: rgb(255, 255, 255);
+  color: #FB5D30;
+  height: 100vh;
+  width: 100vw;
+  transition: .5s;
+  opacity: 1;
+}
+
+#nav2 a {
+  color: #FB5D30;
+  text-decoration: none;
+}
+
+
+.row {
+  margin: 0;
+  width: 100%;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+.searchbar {
+  background-color: rgba(0, 0, 0, 0.185);
+  border-color: transparent;
+  height: 3rem;
+  width: 80%;
+  color: white;
+  border-radius: 5px;
+  transition: .5s;
+  padding-left: 10px;
+}
+
+.searchbar:focus {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.356);
+}
+
+@media screen and (max-width: 768px) {
+  .searchbar {
+      width: 100%;
+  }
+}
+
+::placeholder {
+  color: white;
+  opacity: .7;
+}
+
+.arrows img {
+  width: 25%;
+  height: 25%;
+}
