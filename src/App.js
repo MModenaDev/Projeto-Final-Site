@@ -7,14 +7,17 @@ import Placesdesk from './components/places/Placesdesk'
 import Placesmob from './components/places/Placesmob'
 import Review from './components/review/Reviews';
 import Map from './components/map/map'
+import Admin from './components/admin/Admin'
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar />
       <Header />
       <Howto />
       <Placesdesk />
+      <Placesmob /> */}
+      <Admin></Admin>
       <Placesmob />
       <Review />
       <Map />
