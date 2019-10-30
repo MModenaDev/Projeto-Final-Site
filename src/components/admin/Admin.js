@@ -13,7 +13,7 @@ class Admin extends Component {
         this.state = {
             homes: [],
             homeToEdit: {
-                id: "",
+                _id: "",
                 name: "",
                 maxBooking: "",
                 images: "",
@@ -23,6 +23,12 @@ class Admin extends Component {
                 garage: "",
                 numberGarage: "",
                 plan: "",
+                street:"",
+                streetNumber: 0,
+                complement: "",
+                city: "",
+                state: "",
+                country:"",
             },
         }
         this.changeHouseEdit = this.changeHouseEdit.bind(this);
@@ -36,7 +42,13 @@ class Admin extends Component {
     }
 
     changeHouseEdit(idx) {
-        this.setState({ homeToEdit: this.state.homes[idx] })
+      this.setState({ homeToEdit: this.state.homes[idx] })
+    }
+
+    deleteHouse(elem) {
+      axios.delete(`https://projfinal-dev.herokuapp.com/api/house/${elem._id}`)
+        .then(response => console.log(response))
+        .catch(err => console.log(err))
     }
 
     render() {
@@ -70,7 +82,7 @@ class Admin extends Component {
                 {/* Cards */}
                 <div className="row d-flex justify-content-around">
                     {this.state.homes.map((elem, idx) => {
-                        return <Card key={idx} houseInfo={elem} changeHome={() => this.changeHouseEdit(idx)} />
+                        return <Card key={idx} houseInfo={elem} changeHome={() => this.changeHouseEdit(idx)} deleteHome={() => this.deleteHouse(elem)} />
                     })}
                 </div>
 
