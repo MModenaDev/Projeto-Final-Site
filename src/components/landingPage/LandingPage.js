@@ -9,11 +9,12 @@ import Map from '../map/map'
 import Footer from './footer/Footer'
 // import Admin from './admin/Admin'
 
-function LandingPage() {
+function LandingPage(props) {
+  console.log("=======>",props)
   return (
     <div className="LandingPage">
       <Navbar />
-      <Header />
+      <Header login={props.login} changeLogin={props.changeLogin} />
       <Howto />
       <Placesdesk />
       <Placesmob />

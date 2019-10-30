@@ -93,7 +93,7 @@ class Navbar extends Component {
           <div className="col-4 d-none d-md-flex">
             <div className="row d-flex justify-content-end align-items-center">
               <div className="col-4">
-                Login
+                <a data-toggle="modal" data-target="#login">Login</a> 
               </div>
             </div>
           </div>

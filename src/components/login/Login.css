@@ -91,3 +91,7 @@
   cursor: pointer;
   color: #FB5D30;
 }
+
+.alert {
+  width: 100%;
+}

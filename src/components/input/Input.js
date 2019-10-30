@@ -24,7 +24,7 @@ class FluidInput extends React.Component {
     let inputClass = "fluid-input col-12";
     if (inputFocused) {
       inputClass += " fluid-input--focus";
-    } else if (value !== "") {
+    } else if (value) {
       inputClass += " fluid-input--open";
     }
     
@@ -41,7 +41,7 @@ class FluidInput extends React.Component {
             onChange={changeAction}
             name={name}
           />
-          <label className="fluid-input-label" forHtml={id}>{label}</label>
+          <label className="fluid-input-label" forhtml={id}>{label}</label>
           
         </div>
       </div>
