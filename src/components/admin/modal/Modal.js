@@ -2,44 +2,82 @@ import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import './Modal.css';
 import axios from "axios";
+import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
+import ImageUpload from './images/images'
 
 class Modal extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            _id: "",
             name: "",
             maxBooking: "",
             images: [],
             description: "",
-            numberRooms: "",
-            numberBath: "",
+            numberRooms: 0,
+            numberBath: 0,
             garage: false,
             numberGarage: "",
             plan: "Base",
+            street:"",
+            streetNumber: 0,
+            complement: "",
+            city: "",
+            state: "",
+            country:"",
+            uploadingPhoto: false,
+            uploadingImages: [],
         }
         this.onClickHandler = this.onClickHandler.bind(this);
         this.onChangeHandler = this.onChangeHandler.bind(this);
+        this.showPictures = this.showPictures.bind(this);
+        this.removeImage = this.removeImage.bind(this);
     }
 
     onClickHandler()  {
         if(this.props.modalId === "editHouse") {
-            // axios.put(`https://projfinal-dev.herokuapp.com/api/house/${}`, )
+            this.setState({images: this.state.uploadingImages})         
+            axios.put(`https://projfinal-dev.herokuapp.com/api/house/${this.state._id}`, this.state)
+                .then(this.setState({
+                    name: "",
+                    maxBooking: "",
+                    images: "",
+                    description: "",
+                    numberRooms: 0,
+                    numberBath: 0,
+                    garage: false,
+                    numberGarage: 0,
+                    plan: "Base",
+                    street:"",
+                    streetNumber: 0,
+                    complement: "",
+                    city: "",
+                    state: "",
+                    country:"",
+                }))
+                .catch(err => console.log(err))
         } else {
-            axios.post(`https://projfinal-dev.herokuapp.com/api/house/new`, this.state.body)
+            this.setState({images: this.state.uploadingImages})
+            axios.post(`https://projfinal-dev.herokuapp.com/api/house/new`, this.state)
                 .then(this.setState({
                     name: "",
                     maxBooking: "",
                     images: [],
                     description: "",
-                    numberRooms: "",
-                    numberBath: "",
+                    numberRooms: 0,
+                    numberBath: 0,
                     garage: false,
                     numberGarage: 0,
                     plan: "Base",
+                    street:"",
+                    streetNumber: 0,
+                    complement: "",
+                    city: "",
+                    state: "",
+                    country:"",
                 }))
                 .catch(err => console.log(err))
         }
-        this.setState({ clicked: !this.state.clicked })
     }
 
     onChangeHandler(e)  {
@@ -51,9 +89,53 @@ class Modal extends Component {
 
     UNSAFE_componentWillReceiveProps(newValue) {
         if(newValue != this.props && newValue.modalId === "editHouse"){
-            const { name, description } = newValue.home;
-            this.setState({ name, description });
+            const { name, description, maxBooking, images, numberRooms, numberBath, garage, numberGarage, plan, street, streetNumber, complement, city, state, country, _id } = newValue.home;
+            this.setState({ name, description, maxBooking, images, numberRooms, numberBath, garage, numberGarage, plan, street, streetNumber, complement, city, state, country, _id});
+            this.setState({uploadingImages: this.state.images})
         }
+    }
+
+    onChangePicture(e) {
+        const files = Array.from(e.target.files)
+        this.setState({ uploadingPhoto: true })
+    
+        const formData = new FormData()        
+    
+        files.forEach((file, i) => {
+          formData.append(i, file)
+        })
+        fetch(`http://localhost:5000/api/image-upload`, {
+          method: 'POST',
+          body: formData
+        })
+        .then(res => res.json())
+        .then(image => {
+     
+          this.setState({ 
+            uploading: false,
+            uploadingImages: this.state.uploadingImages.concat(image)
+          })
+        })
+      }
+
+    removeImage(id) {
+        const { uploadingImages } = this.state;
+        let uploadingImagesAdj = uploadingImages.filter(image => image.public_id !== id)        
+        this.setState({uploadingImages: uploadingImagesAdj})
+    }
+
+    showPictures() {
+      const { uploadingImages } = this.state;
+    //   if(this.props.modalId === "editHouse") {
+    //     this.setState({uploadingImages: this.state.images})
+    //     return uploadingImages.map(image => {            
+    //         return (<ImageUpload image={image} removeImage={this.removeImage}/>)
+    //     })  
+    //   } else {
+        return uploadingImages.map(image => {            
+            return (<ImageUpload image={image} removeImage={this.removeImage}/>)
+        })
+    //   }
     }
 
     render() {
@@ -71,6 +153,30 @@ class Modal extends Component {
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>
                                 <input type="text" className="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Home name" value={this.state.name} onChange={(e) => this.onChangeHandler(e)}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="street">Street</label>
+                                <input type="text" className="form-control" id="street" name="street" aria-describedby="emailHelp" placeholder="Street name" value={this.state.street} onChange={(e) => this.onChangeHandler(e)}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="streetNumber">Number</label>
+                                <input type="number" className="form-control" id="streetNumber" name="streetNumber" aria-describedby="emailHelp" placeholder="Number" value={this.state.streetNumber} onChange={(e) => this.onChangeHandler(e)}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="complement">Complement</label>
+                                <input type="text" className="form-control" id="complement" name="complement" aria-describedby="emailHelp" placeholder="Complement" value={this.state.complement} onChange={(e) => this.onChangeHandler(e)}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="city">City</label>
+                                <input type="text" className="form-control" id="city" name="city" aria-describedby="emailHelp" placeholder="City" value={this.state.city} onChange={(e) => this.onChangeHandler(e)}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="state">State</label>
+                                <input type="text" className="form-control" id="state" name="state" aria-describedby="emailHelp" placeholder="State" value={this.state.state} onChange={(e) => this.onChangeHandler(e)}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="country">Country</label>
+                                <input type="text" className="form-control" id="country" name="country" aria-describedby="emailHelp" placeholder="Country" value={this.state.country} onChange={(e) => this.onChangeHandler(e)}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="maxBooking">Max. number of bookings</label>
@@ -103,7 +209,12 @@ class Modal extends Component {
                                   <option value="Explorer">Explorer</option>
                                 </select>
                             </div>
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="numberBath">Images</label>
+                                <input type="file" className="form-control" id="images" name="images" aria-describedby="emailHelp" placeholder="Select Image" onChange={(e) => this.onChangePicture(e)}/>
+                                {this.showPictures()}
+                            </div>
+                        </div>                        
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="button" className="btn btn-success" onClick={this.onClickHandler}>{(this.props.modalId==="newHouse")?"Save":"Edit"}</button>
