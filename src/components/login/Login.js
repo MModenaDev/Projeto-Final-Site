@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Login.css'
 import Input from '../input/Input'
@@ -52,6 +53,11 @@ class Login extends Component{
       })
   }
 
+  removeModalBackdrop() {
+    let modalBackdrop = document.querySelector('.modal-backdrop');
+    modalBackdrop.parentNode.removeChild(modalBackdrop);
+  }
+
   render(){
     return( 
     <Fragment>
@@ -81,7 +87,7 @@ class Login extends Component{
           <Input type='password' name="password" label='Password' id="password" value={this.state.password} changeAction={(e) => this.onChangeHandler(e)} />
           <span onClick={this.clickShowPassword} className="col-12 text-right mousePointer">Mostrar senha</span>
           <button type="button" className="btn btn-login d-flex" onClick={(e) => {this.onSubmit(e)}}>Login</button>
-          <span className="col-12 text-center">Não possui conta? <span className="linkSignin">Cadastre-se</span></span>
+          <span className="col-12 text-center">Não possui conta? <Link className="linkSignin" to="/signup" onClick={() => this.removeModalBackdrop()}>Cadastre-se</Link></span>
         </form>
       </div>
     </Fragment>

@@ -1,16 +1,19 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
 
-import AuthService from "./components/auth/auth-service"
+import AuthService from "./components/auth/auth-service";
+import Admin from "./components/admin/Admin";
+import Header from "./components/header/Header";
+import Howto from "./components/howto/Howto";
+import LandingPage from "./components/landingPage/LandingPage";
+import Map from "./components/map/map";
+import Navbar from "./components/navbar/Navbar";
+import Placesdesk from "./components/places/Placesdesk";
+import Placesmob from "./components/places/Placesmob";
+import Review from "./components/review/Reviews";
+import Signup from "./components/signup/Signup";
 
-import Navbar from './components/navbar/Navbar';
-import Header from './components/header/Header'
-import Howto from './components/howto/Howto'
-import Placesdesk from './components/places/Placesdesk'
-import Placesmob from './components/places/Placesmob'
-import Review from './components/review/Reviews';
-import Map from './components/map/map'
-import Admin from './components/admin/Admin'
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
@@ -52,15 +55,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
-        <Header getUser={this.getTheUser} />
-        <Howto />
-        <Placesdesk />
-        {/* <Admin></Admin> */}
-        <Placesmob />
-        <Review />
-        <Map />
-      </div>  
+        <Switch>
+          <Route path="/" exact={true} component={LandingPage} />
+          <Route path="/signup" exact={true} component={Signup} />
+          {/* <Route path="/howto" component={Howto} />
+            <Route path="/map" component={Map} />
+            <Route patch="/home" component={Home} /> */}
+        </Switch>
+      </div>
     );
   }
 }
