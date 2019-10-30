@@ -29,7 +29,6 @@ class Header extends Component {
               </div>
               <div className="modal-body row d-flex justify-content-center">
                 <Login getUser={this.props.getUser} />
-
               </div>
               </div>
           </div>
