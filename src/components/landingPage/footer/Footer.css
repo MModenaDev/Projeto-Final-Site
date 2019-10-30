@@ -1,0 +1,20 @@
+.footer {
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.15);
+  height: 70px;
+}
+
+.foot-img {
+  width: 3rem;
+}
+
+.foot-img img { 
+  width: 100%;
+}
+
+.footer-text {
+  font-size: 1.1rem !important;
+  color: #BDBDBD;
+
+}

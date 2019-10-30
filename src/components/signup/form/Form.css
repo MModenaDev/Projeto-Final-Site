@@ -1,0 +1,422 @@
+.form {
+  width: 150vw;
+  height: 100vh;
+  display: flex;
+}
+
+.form-container1 {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-container2 {
+  width: 90rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-container3 {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin-right: -17px; */
+}
+
+.form__alternative {
+  font-size: 2.6rem;
+  color: #f1f1f1;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0,0,0, .2);
+  margin-bottom: 3rem;
+}
+
+.form__alternative span {
+  color: #FB5D30;
+}
+
+.form__or {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-bottom: 1rem; */
+}
+
+.form__or-line {
+  width: 40%;
+  /* height: 2px; */
+  /* background-color: #aaa; */
+  border-bottom: 1px solid #888;
+}
+
+.form__or-text {
+  font-size: 2rem;
+  color: #aaa;
+  transform: translateY(4px);
+}
+
+.form__label {
+  width: 100%;
+  color: #f1f1f1;
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0,0,0, .2);
+  margin-top: 2.5rem;
+}
+
+.form__input-container {
+  width: 100%;
+  position: relative;
+}
+
+.form__input {
+  width: 100%;
+  font-size: 2rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid #888;
+  border-radius: 5px;
+  outline: none;
+  color: #333;
+}
+
+.form__icon {
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+
+.form__continue {
+  font-size: 2.6rem;
+  color: #f1f1f1;
+  font-weight: 600;
+  background-color: #FB5D30;
+  border: none;
+  margin-top: 10rem;
+  width: 100%;
+  padding: 2rem 0;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0,0,0, .2);
+  transition: all .5s;
+  outline: none;
+}
+
+.form__continue:hover {
+  transform: translateY(-4px) scale(1.02);
+  outline: none;
+}
+
+.form__continue:focus {
+  transform: translateY(-2px) scale(1.01);
+}
+
+.form__circles-container {
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
+  margin-top: 6rem;
+}
+
+.circle {
+  background-color: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid #FB5D30;
+}
+
+.circle-active {
+  background-color: #FB5D30;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.form-container__outer {
+  position: relative;
+  width: 50vw;
+  height: 100vh;
+}
+
+.form-price__title {
+  font-size: 4.6rem;
+  color: #f1f1f1;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0,0,0, .2);
+  margin-bottom: 6rem;
+}
+
+.form-almost__title {
+  font-size: 3rem;
+  color: #f1f1f1;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0,0,0, .2);
+  text-align: center;
+}
+
+.form-almost__divide {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-almost__divide-container1 {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-almost__divide-container2 {
+  width: 23rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__label--center {
+  width: 100%;
+  color: #f1f1f1;
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0,0,0, .2);
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.form-almost__inputs-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-almost__mini-input1 {
+  width: 45%;
+  font-size: 2rem;
+  padding: 1.5rem 1.5rem;
+  border: 1px solid #888;
+  border-radius: 5px;
+  outline: none;
+  color: #333;
+}
+
+.form-almost__mini-input2 {
+  width: 70%;
+  font-size: 2rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid #888;
+  border-radius: 5px;
+  outline: none;
+  color: #333;
+}
+
+.form-almost__mini-input1::placeholder {
+  text-align: center;
+  color: #828282;
+}
+
+@media screen and (max-width: 1500px) {
+  .form {
+    width: 300vw;
+  }
+
+  .form-price__title {
+    font-size: 4.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .form-container__outer {
+    width: 100vw;
+  }
+
+  .form-container1 {
+    width: 35rem;
+  }
+
+  .form__label {
+    font-size: 1.8rem;
+    margin-top: 1.2rem;
+  }
+
+  .form__input {
+    font-size: 1.4rem;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .form__icon {
+    width: 2.4rem;
+  }
+
+  .form__or-text {
+    font-size: 1.6rem;
+  }
+
+  .form__alternative {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .form__continue {
+    font-size: 2.4rem;
+    margin-top: 5rem;
+    padding: 1.8rem 0;
+  }
+
+  .form__circles-container {
+
+    width: 14rem;
+    margin-top: 4rem;
+  }
+
+  .circle {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  /* -------------------------------------- 3 PARTE --------------------------------------- */ 
+  .form-almost__title {
+    font-size: 2.4rem;
+  }
+
+  .form__label--center {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+  }
+
+  .form-almost__mini-input1 {
+    font-size: 1.4rem;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .form-almost__mini-input2 {
+    font-size: 1.4rem;
+    padding: 1.2rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1400px) and (max-height: 650px) {
+  .form-container1 {
+    width: 35rem;
+  }
+
+  .form-price__title {
+    font-size: 3.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .form-card__benefits-container {
+    margin-bottom: 1.4rem;
+  }
+
+  .form__label {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+  }
+
+  .form__input {
+    font-size: 1.4rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .form__icon {
+    width: 2.1rem;
+  }
+
+  .form__or-text {
+    font-size: 1.4rem;
+  }
+
+  .form__alternative {
+    font-size: 1.8rem;
+    margin-bottom: .5rem;
+  }
+
+  .form__continue {
+    font-size: 2.2rem;
+    padding: 1.4rem 0;
+    margin-top: 4.5rem;
+  }
+
+  .form__circles-container {
+    width: 14rem;
+    margin-top: 2.5rem;
+  }
+
+  .circle {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  
+  .form-container2 {
+    width: 100rem;
+  }
+
+  .form-price__title {
+    font-size: 3.6rem;
+    margin-bottom: 3rem;
+  }
+
+  .form-card__title {
+    font-size: 2.8rem;
+  }
+
+  .form-card__arrow {
+    width: 2.2rem;
+  }
+
+  .form-card__description {
+    font-size: 1.3rem;
+  }
+
+  .form-card__hr-like {
+    margin: .5rem 0;
+  }
+
+  .form-card__price-container--RS {
+    font-size: 2rem;
+    transform: translateY(-32%);
+  }
+
+  .form-card__price-container--price {
+    font-size: 4.2rem;
+  }
+
+  .form-card__price-container--monthly {
+    font-size: 2rem;
+    transform: translateY(15%);
+  }
+
+  .form-card__benefits-container {
+    flex-direction: row;
+  }
+
+  .form-card__benefits-container--img {
+    width: 3rem;
+    margin: 0 2px 0 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .form-container1 {
+    width: 90%;
+  }
+
+  .form-container2 {
+    width: 30rem;
+  }
+}
