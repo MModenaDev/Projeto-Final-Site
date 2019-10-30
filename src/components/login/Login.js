@@ -1,15 +1,22 @@
 import React, { Component, Fragment } from 'react'
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Login.css'
 import Input from '../input/Input'
+import AuthService from "../auth/auth-service";
 
 class Login extends Component{
   constructor (props){
     super(props)
     this.state = {
+      email: "",
+      password: "",
       showPassword: true,
     }
-    this.clickShowPassword = this.clickShowPassword.bind(this)
+    this.service = new AuthService();
+    this.clickShowPassword = this.clickShowPassword.bind(this);
+    this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   clickShowPassword() {
@@ -27,7 +34,28 @@ class Login extends Component{
       this.setState({
         showPassword : true
       })
+    }
   }
+
+  onChangeHandler(e)  {
+    let { name, value, type, checked } = e.target;
+    value = (type==="checkbox")?checked:value;
+    this.setState({ [name]: value})
+  }
+
+  onSubmit(e) {
+    e.preventDefault()
+    const { email, password } = this.state;
+    this.service.login(email, password)
+      .then(response => {
+        this.setState({ username: "", password: "" });
+        this.props.getUser(response);
+      })
+  }
+
+  removeModalBackdrop() {
+    let modalBackdrop = document.querySelector('.modal-backdrop');
+    modalBackdrop.parentNode.removeChild(modalBackdrop);
   }
 
   render(){
@@ -37,16 +65,16 @@ class Login extends Component{
         Faça seu Login
       </div>
       <div className="col-12 my-2">  
-        <button className='btn btn-face d-flex'>
+        <a href="https://projfinal-dev.herokuapp.com/api/auth/facebook" className='btn btn-face d-flex'>
           <img className='icos-fac' src="./images/facebookico.png" alt=""/>
           <span className='btn-textface'> Facebook</span>
-        </button>
+        </a>
       </div>
       <div className="col-12 my-2">
-      <button className='btn btn-google d-flex'>
+        <a href="https://projfinal-dev.herokuapp.com/api/auth/google"  className='btn btn-google d-flex'>
           <img className='icos-goo' src="./images/googleico.png" alt=""/>
           <span className='btn-textgoog'> Google</span>
-        </button>
+        </a>
       </div>
       <div className="col-12 line">
         <div className="lineGray">
@@ -55,11 +83,11 @@ class Login extends Component{
       </div>
       <div className="col-12 formLogin">
         <form className="row">
-          <Input type="text" label="Email" id="email"/>
-          <Input type='password' label='Password' id="password"/>
+          <Input type="text" name="email" label="Email" id="email" value={this.state.email} changeAction={(e) => this.onChangeHandler(e)} />
+          <Input type='password' name="password" label='Password' id="password" value={this.state.password} changeAction={(e) => this.onChangeHandler(e)} />
           <span onClick={this.clickShowPassword} className="col-12 text-right mousePointer">Mostrar senha</span>
-          <button type="button" className="btn btn-login d-flex">Login</button>
-          <span className="col-12 text-center">Não possui conta? <span className="linkSignin">Cadastre-se</span></span>
+          <button type="button" className="btn btn-login d-flex" onClick={(e) => {this.onSubmit(e)}}>Login</button>
+          <span className="col-12 text-center">Não possui conta? <Link className="linkSignin" to="/signup" onClick={() => this.removeModalBackdrop()}>Cadastre-se</Link></span>
         </form>
       </div>
     </Fragment>
