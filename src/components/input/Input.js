@@ -7,10 +7,8 @@ class FluidInput extends React.Component {
     super(props);
     this.state = {
       inputFocused: false,
-      value: ""
     };
     this.focusField = this.focusField.bind(this)
-    this.handleChange = this.handleChange.bind(this)
   }
 
   focusField() {
@@ -19,15 +17,9 @@ class FluidInput extends React.Component {
     });
   }
 
-  handleChange(event) {
-    this.setState({
-      value: event.target.value
-    });
-  }
-
   render() {
-    const { type, label, id } = this.props;
-    const { inputFocused, value } = this.state;
+    const { type, label, id, value, name, changeAction } = this.props;
+    const { inputFocused } = this.state;
     
     let inputClass = "fluid-input col-12";
     if (inputFocused) {
@@ -46,7 +38,8 @@ class FluidInput extends React.Component {
             id={id}
             onFocus={this.focusField}
             onBlur={this.focusField}
-            onChange={this.handleChange}
+            onChange={changeAction}
+            name={name}
           />
           <label className="fluid-input-label" forHtml={id}>{label}</label>
           
