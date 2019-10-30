@@ -1,27 +1,19 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/navbar/Navbar';
-import Header from './components/header/Header'
-import Howto from './components/howto/Howto'
-import Placesdesk from './components/places/Placesdesk'
-import Placesmob from './components/places/Placesmob'
-import Review from './components/review/Reviews';
-import Map from './components/map/map'
-import Footer from './components/footer/Footer'
-import Admin from './components/admin/Admin'
+import { Switch, Route } from 'react-router-dom'
+import LandingPage from './components/landingPage/LandingPage';
+import Signup from './components/signup/Signup';
 
 function App() {
   return (
     <div className="App">
-      {/* <Navbar />
-      <Header />
-      <Howto />
-      <Placesdesk />
-      <Placesmob /> */}
-      <Admin></Admin>
-      <Placesmob />
-      <Review />
-      <Map />
+      <Switch>
+            <Route path="/" exact={true} component={LandingPage} />
+            <Route path="/signup" exact={true} component={Signup} />
+            {/* <Route path="/howto" component={Howto} />
+            <Route path="/map" component={Map} />
+            <Route patch="/home" component={Home} /> */}
+        </Switch>
     </div>  
   );
 }
