@@ -1,9 +1,10 @@
 .navbar {
-  height: 5rem;
+  height: 8rem;
   color: white;
   font-weight: bold;
   transition: 500ms ease;
   background-color: transparent;
+  font-size: 1.7rem;
 }
 
 .navbar a {
@@ -53,7 +54,7 @@
 .searchbar {
   background-color: rgba(0, 0, 0, 0.185);
   border-color: transparent;
-  height: 3rem;
+  height: 4rem;
   width: 80%;
   color: white;
   border-radius: 5px;

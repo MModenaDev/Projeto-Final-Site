@@ -14,7 +14,6 @@ import Home from './components/home/Home';
 
 ReactDOM.render(
     <BrowserRouter>
-        <Navbar />
         <Switch>
             <Route path="/" exact={true} component={App} />
             <Route path="/howto" component={Howto} />

@@ -10,7 +10,7 @@ const Footerico = (props) => {
         <img src={props.imgsrc} alt=""/>
       </Link>
     </div>
-    <h4 className="mt-2">{props.name}</h4>
+    <span className="mt-2 footer-text">{props.name}</span>
   </div>
 
  )

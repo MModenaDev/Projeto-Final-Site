@@ -65,46 +65,44 @@ class Navbar extends Component {
     return(
       <div id="nav" className='container-fluid navbar fixed-top'>
         <div className="row">
-          <div className="col-12 col-md-8">
+          <div className="col-12">
             <div className="row d-flex align-items-center">
+
               <div className="col-2 col-md-2 text-center p-0 d-none d-md-block">
                 <Link to="/">LOGO</Link>
               </div>
+
               <div onClick={() => this.changeArrow()} className="col-2 col-md-2 text-center p-0 d-md-none">
                 LOGO
               </div>
+
               <div onClick={() => this.changeArrow()} className="col-1 arrows d-flex d-md-none justify-content-left p-0">
                 <img id="arrow" src="./images/angle-arrow-down.png" alt=""/>
               </div>
-              <div className="col-9 col-md-6">
+
+              <div className="col-9 col-md-4">
                 <input className="searchbar" placeholder="Seach your next home" type="text"/>
               </div>
-              <div className="col-4 d-none d-md-flex">
-                <div className="row d-flex align-items-center">
-                  <div className="col-4">
+              <div className="col-6 d-none d-md-flex ">
+                <div className="row d-flex align-items-center justify-content-end">
+                  <div className="col-3">
                     <a href="/">Homes</a>
                   </div>
-                  <div className="col-4">Plans</div>
-                  <div className="col-4">About</div>
+                  <div className="col-3">Plans</div>
+                  <div className="col-3">About</div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-4 d-none d-md-flex">
-            <div className="row d-flex justify-content-end align-items-center">
-              <div className="col-4">
-                Login
               </div>
             </div>
           </div>
         </div>
         <div id="nav2" className="col-12 p-0 nav2-changes">
-          <div className="row d-flex align-items-center">
-            <div className="col-12 d-flex justify-content-center">
-              <a href="/">Homes</a>
+          <div className="row d-flex align-items-top  pt-5">
+            <div className="col-12 d-flex flex-column justify-content-start mt-2 align-items-center">
+              <Link className='my-3' to="/">Home</Link>
+              <Link className='my-3' to="/home">Places</Link>
+              <Link className='my-3' to="/">Pricing</Link>
+              <Link className='my-3' to="/">About</Link>
             </div>
-            <div className="col-12 d-flex justify-content-center">Plans</div>
-            <div className="col-12 d-flex justify-content-center">About</div>
           </div>
         </div>
       </div>

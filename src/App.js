@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+  CSSTransition,
+  TransitionGroup,
+} from 'react-transition-group';
 import './App.css';
 import Navbar from './components/navbar/Navbar';
 import Header from './components/header/Header'
@@ -13,12 +17,10 @@ import Admin from './components/admin/Admin'
 function App() {
   return (
     <div className="App">
-      {/* <Navbar />
+      <Navbar />
       <Header />
       <Howto />
       <Placesdesk />
-      <Placesmob /> */}
-      <Admin></Admin>
       <Placesmob />
       <Review />
       <Map />

@@ -5,19 +5,16 @@
   height: 70px;
 }
 
-.footer a {
-  text-decoration: none;
-  color: gray;
-}
-
 .foot-img {
-  width: 2rem;
+  width: 3rem;
 }
 
 .foot-img img { 
   width: 100%;
 }
 
-.footer h4 {
-  font-size: .9rem;
+.footer-text {
+  font-size: 1.1rem !important;
+  color: #BDBDBD;
+
 }
