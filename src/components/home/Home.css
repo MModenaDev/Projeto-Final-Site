@@ -74,12 +74,12 @@
   right: 0;
   z-index: 1029;
   height: 100vh;
-  width: 60vw;
+  width: 60vw !important;
 }
 
 .places-row-desk {
-  margin-top: 15rem;
-  width: 40vw;
+  margin-top: 15rem !important;
+  width: 40vw !important;
 }
 
 .fixed-top-city {

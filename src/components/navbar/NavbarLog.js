@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './NavbarLog.css'
 import { Link } from 'react-router-dom'
-import Footerico from '../landingPage/footer/Footerico';
+import Footerico from '../footer/Footerico';
 import Logoorange1 from '../../logoorange1.svg'
 
 class NavbarLog extends Component {

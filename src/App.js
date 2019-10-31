@@ -14,9 +14,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import Profile from './components/profile/Profile';
 import Pricing from './components/pricing/Pricing';
-
-import Home from './components/home/Home'
-
 import "./App.css";
 
 AOS.init();
