@@ -93,7 +93,9 @@ class Navbar extends Component {
                     <a href="/">Homes</a>
                   </div>
                   <div className="col-3">Plans</div>
-                  <div className="col-3">About</div>
+                  <div className="col-3">
+                  <Link to="/home">About</Link>
+                  </div>
                 </div>
               </div>
             </div>

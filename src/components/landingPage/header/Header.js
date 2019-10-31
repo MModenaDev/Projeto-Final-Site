@@ -29,7 +29,7 @@ class Header extends Component {
             <button data-toggle="modal" data-target="#login" type="button" className="btn btn-header" onClick={this.openModal}>Faça seu login</button>      
           </div>        
         </div>
-        {(this.props.login)?(<Login changeLogin={this.props.changeLogin} />):null}
+        {(this.props.login)?(<Login changeLogin={this.props.changeLogin} getUser={this.props.getUser} {...this.props}/>):null}
       </div>
     )
       

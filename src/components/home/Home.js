@@ -6,6 +6,7 @@ import NavbarLog from '../navbar/NavbarLog';
 import Axios from 'axios';
 import CardMobile from './card/Card-mob';
 
+import Footer from '../footer/Footer';
 
 class Home extends Component {
   constructor(props){
@@ -159,6 +160,7 @@ class Home extends Component {
 
         </div>
       </div>
+      <Footer />
       </Fragment>
     )
   }

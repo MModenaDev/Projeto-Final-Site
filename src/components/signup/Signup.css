@@ -100,5 +100,14 @@
     font-size: 2.2rem;
     width: 80%;
   }
+}
 
+@media screen and (max-width: 450px) {
+  .form-price__title {
+    font-size: 2.4rem;
+  }
+
+  .form-card {
+    margin-bottom: 2rem;
+  }
 }
