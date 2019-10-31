@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import AuthService from "./components/auth/auth-service";
+import ProtectedRoute from "./components/auth/protected-route"
+
 import Admin from "./components/admin/Admin";
 import LandingPage from "./components/landingPage/LandingPage";
 import Signup from "./components/signup/Signup";
-import {
-  CSSTransition,
-  TransitionGroup,
-} from 'react-transition-group';
 
 import "./App.css";
 
@@ -63,9 +62,14 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route path="/" exact={true} render={(props)  => <LandingPage login={this.state.showLogin} changeLogin={this.changeLogin} {...props} />} />
+          <Route path="/" exact={true} render={(props)  => <LandingPage login={this.state.showLogin} changeLogin={this.changeLogin} getUser={this.getTheUser} {...props} />} />
           <Route path="/signup" exact={true} component={Signup} />
-          <Route path="/dashboard" exact={true} component={Admin} />
+          <ProtectedRoute 
+            path="/dashboard" 
+            exact 
+            component={Admin} 
+            user={this.state.user}
+          />
           {/* <Route patch="/home" component={Home} /> */}
         </Switch>
       </div>

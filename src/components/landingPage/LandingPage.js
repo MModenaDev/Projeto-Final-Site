@@ -10,11 +10,10 @@ import Footer from './footer/Footer'
 // import Admin from './admin/Admin'
 
 function LandingPage(props) {
-  console.log("=======>",props)
   return (
     <div className="LandingPage">
       <Navbar />
-      <Header login={props.login} changeLogin={props.changeLogin} />
+      <Header login={props.login} changeLogin={props.changeLogin} getUser={props.getUser} {...props}/>
       <Howto />
       <Placesdesk />
       <Placesmob />
