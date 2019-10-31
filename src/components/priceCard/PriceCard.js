@@ -13,20 +13,20 @@ class PriceCard extends Component {
   }
 
   componentDidMount() {
-    if(this.props.showArrow) this.setState({ showInfo: false })
+    if(this.props.showArrow) this.setState({ showInfo: false });
+    if(window.innerWidth < 450) this.setState({ showInfo: false});
   }
 
   toggleCard() {
-    let arrow = document.getElementsByClassName('form-card__arrow');
     this.setState({ showInfo: !this.state.showInfo});
   }
 
-  render(props) {
+  render() {
     return (
       <div className="form-card">
         <div className="form-card__header">
           <h3 className="form-card__title" style={this.props.styleTitle}>{this.props.title}</h3>
-          {(this.props.showArrow)?(<img src="/images/upArrow.svg" alt="upward pointing arrow" className="form-card__arrow" onClick={() => this.toggleCard()}/>):null}
+          {(this.props.showArrow)?(<img src={this.props.arrowUrl} alt="upward pointing arrow" className="form-card__arrow" onClick={() => this.toggleCard()}/>):null}
         </div>
         <p className="form-card__description">{this.props.description}</p>
 

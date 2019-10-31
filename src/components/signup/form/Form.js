@@ -152,9 +152,9 @@ class Form extends Component {
           <div className="form-container2">
             <h3 className="form-price__title">Escolha seu plano</h3>
             <div className="form__card-container">
-              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Básico")}} title="Básico" description="Feito para quem busca simplicidade no seu dia-a-dia." price="599" styleTitle={{color: "#FF8514"}} styleBg={{backgroundColor: "#FF8514"}} showArrow={this.state.showArrow} />
-              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Nômade")}} title="Nômade" description="O melhor plano para quem quer flexibilidade em suas estadias." price="799" styleTitle={{color: "#D65A36"}} styleBg={{backgroundColor: "#D65A36"}} showArrow={this.state.showArrow} />
-              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Explorador")}} title="Explorador" description="Para quem deseja explorar o mundo com muito conforto." price="999" styleTitle={{color: "#BB2A00"}} styleBg={{backgroundColor: "#BB2A00"}} showArrow={this.state.showArrow} />
+              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Básico")}} title="Básico" description="Feito para quem busca simplicidade no seu dia-a-dia." price="599" styleTitle={{color: "#FF8514"}} styleBg={{backgroundColor: "#FF8514"}} showArrow={this.state.showArrow} arrowUrl={'/images/collapseArrowYellow.svg'}/>
+              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Nômade")}} title="Nômade" description="O melhor plano para quem quer flexibilidade em suas estadias." price="799" styleTitle={{color: "#D65A36"}} styleBg={{backgroundColor: "#D65A36"}} showArrow={this.state.showArrow} arrowUrl={'/images/collapseArrowOrange.svg'}/>
+              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Explorador")}} title="Explorador" description="Para quem deseja explorar o mundo com muito conforto." price="999" styleTitle={{color: "#BB2A00"}} styleBg={{backgroundColor: "#BB2A00"}} showArrow={this.state.showArrow} arrowUrl={'/images/collapseArrowDark.svg'}/>
             </div>
 
             <div className="form__circles-container">

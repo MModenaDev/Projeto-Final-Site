@@ -418,5 +418,8 @@
 
   .form-container2 {
     width: 30rem;
+    top: 8rem;
+    padding-bottom: 5rem;
+    transform: translate(-50%, 0);
   }
 }

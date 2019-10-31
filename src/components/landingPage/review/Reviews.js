@@ -16,6 +16,7 @@ class Review extends Component {
           <ReviewCard imgUrl="./images/avatar.png" stars="5" text="Uma experiência única que me permitiu aproveitar e conhecer diversos lugares sem deixar de lado a comodidade e o conforto."/>
         </div>
         
+        <button className="landing-page--register-btn">Register now</button>
       </div>
     );
   }
