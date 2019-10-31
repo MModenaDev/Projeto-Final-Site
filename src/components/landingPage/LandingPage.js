@@ -7,11 +7,10 @@ import Placesmob from './places/Placesmob'
 import Review from './review/Reviews';
 
 function LandingPage(props) {
-  console.log("=======>",props)
   return (
     <div className="LandingPage">
       <Navbar />
-      <Header login={props.login} changeLogin={props.changeLogin} />
+      <Header login={props.login} changeLogin={props.changeLogin} getUser={props.getUser} {...props}/>
       <Howto />
       <Placesdesk />
       <Placesmob />

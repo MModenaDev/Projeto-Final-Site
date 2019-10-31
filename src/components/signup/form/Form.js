@@ -1,52 +1,72 @@
 import React, { Component } from 'react';
 import PriceCard from '../../priceCard/PriceCard'
 import './Form.css';
+import AuthService from "../../auth/auth-service";
+
 
 class Form extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentPage: 1,
-      translateWidth: ''
+      currentPage: 0,
+      translateWidth: '',
+      email: "",
+      name: "",
+      password: "",
+      plan: "",
+      showArrow: false
     }
+
+    this.service = new AuthService();
     
-    this.fillCircle = this.fillCircle.bind(this);
+    this.sectionManager = this.sectionManager.bind(this);
+    this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.checkPassword = this.checkPassword.bind(this);
+    this.changePlan = this.changePlan.bind(this);
   }
 
   componentDidMount() {
-
     if (window.innerWidth > 1500) {
       this.setState({
-        translateWidth: window.innerWidth / 2
+        translateWidth: window.innerWidth / 2,
       })
     } else {
       this.setState({
-        translateWidth: window.innerWidth
+        translateWidth: window.innerWidth,
       })
     }
-
-    
+    if (window.innerWidth < 1200) {
+      this.setState({
+        showArrow: true,
+      })
+    }
   }
 
-  fillCircle(e) {
+  onChangeHandler(e)  {
+    let { name, value, type, checked } = e.target;
+    value = (type==="checkbox")?checked:value;
+    this.setState({ [name]: value})
+  }
+
+  checkPassword(e) {
+    let { value } = e.target;
+    if(value === this.state.password) document.getElementsByClassName("form__verifier")[0].setAttribute("style", "border: 3px solid #00cc00")
+    else document.getElementsByClassName("form__verifier")[0].setAttribute("style", "border: 3px solid #ff0000")
+  }
+
+  changePlan(plan) {
+    this.setState({ plan })
+  }
+
+  sectionManager(e, num) {
     e.preventDefault();
-
-    this.setState({
-      currentPage: this.state.currentPage + 1
-    });
-
-    if (this.state.currentPage < 3) {
-      // Preenchendo os círculos
-      let circles = document.getElementsByClassName('circle');
-      circles[this.state.currentPage].classList.add('circle-active');
-      circles[this.state.currentPage + 3].classList.add('circle-active');
-      circles[this.state.currentPage + 6].classList.add('circle-active');
-  
+    
+    if (this.state.currentPage < 4 && this.state.currentPage > -1) {
       // Animando o form
       let form = document.querySelector('.form');
-      let initialFormX = -1 * (this.state.currentPage - 1) * this.state.translateWidth;
-      let finalFormX = -1 * (this.state.currentPage) * this.state.translateWidth;
+      let initialFormX = -1 * (this.state.currentPage) * this.state.translateWidth;
+      let finalFormX = -1 * (num) * this.state.translateWidth;
       if (initialFormX !== 0) initialFormX += 'px';
       if (finalFormX !== 0) finalFormX += 'px';
 
@@ -58,7 +78,26 @@ class Form extends Component {
         easing: 'ease-in-out',
         fill: 'forwards'
       });
+
+      this.setState({
+        currentPage: num
+      });
     }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    const { email, password } = this.state;
+
+    this.service.signup(email, password)
+      .then(response => {
+        console.log(response)
+        // this.setState({ email: "", password: "", message: "" });
+        // this.props.getUser(response);
+        // this.props.history.push(this.props.location.prevPath);
+      })
+      // .catch(error => this.setState({ message: error.response.data.message }))
   }
 
   render() {
@@ -73,36 +112,36 @@ class Form extends Component {
               <p className="form__or-text">ou</p>
               <div className="form__or-line"></div>
             </div>
-            <label htmlFor="" className="form__label">Email</label>
+            <label htmlFor="email" className="form__label">Email</label>
             <div className="form__input-container">
-              <input type="text" className="form__input"/>
+              <input type="text" className="form__input" name="email" value={this.state.email} onChange={(e) => this.onChangeHandler(e)} />
               <img src="/images/mail.svg" alt="mail icon" className="form__icon"/>
             </div>
             
-            <label htmlFor="" className="form__label">Nome</label>
+            <label htmlFor="name" className="form__label">Name</label>
             <div className="form__input-container">
-              <input type="text" className="form__input"/>
+              <input type="text" className="form__input" name="name" value={this.state.name} onChange={(e) => this.onChangeHandler(e)} />
               <img src="/images/user.svg" alt="user icon" className="form__icon"/>
             </div>
 
-            <label htmlFor="" className="form__label">Senha</label>
+            <label htmlFor="password" className="form__label">Senha</label>
             <div className="form__input-container">
-              <input type="text" className="form__input"/>
+              <input type="password" className="form__input" name="password" value={this.state.password} onChange={(e) => this.onChangeHandler(e)} />
               <img src="/images/locker.svg" alt="locker icon" className="form__icon"/>
             </div>
 
             <label htmlFor="" className="form__label">Repita a senha</label>
             <div className="form__input-container">
-              <input type="text" className="form__input"/>
+              <input type="password" className="form__input form__verifier" onChange={(e) => this.checkPassword(e)} />
               <img src="/images/locker.svg" alt="locker icon" className="form__icon"/>
             </div>
 
-            <button className="form__continue" onClick={(e) => this.fillCircle(e)}>Continuar</button>
+            <button className="form__continue" onClick={(e) => this.sectionManager(e, 1)}>Continuar</button>
 
             <div className="form__circles-container">
-              <div className="circle circle-active"></div>
-              <div className="circle"></div>
-              <div className="circle"></div>
+              <div className="circle circle-active" onClick={(e) => this.sectionManager(e, 0)}></div>
+              <div className="circle" onClick={(e) => this.sectionManager(e, 1)}></div>
+              <div className="circle" onClick={(e) => this.sectionManager(e, 2 )}></div>
             </div>
           </div>
         </div>
@@ -113,15 +152,15 @@ class Form extends Component {
           <div className="form-container2">
             <h3 className="form-price__title">Escolha seu plano</h3>
             <div className="form__card-container">
-              <PriceCard btnClick={this.fillCircle} title="Básico" description="Feito para quem busca simplicidade no seu dia-a-dia." price="599" styleTitle={{color: "#FF8514"}} styleBg={{backgroundColor: "#FF8514"}}/>
-              <PriceCard btnClick={this.fillCircle} title="Nômade" description="O melhor plano para quem quer flexibilidade em suas estadias." price="799" styleTitle={{color: "#D65A36"}} styleBg={{backgroundColor: "#D65A36"}}/>
-              <PriceCard btnClick={this.fillCircle} title="Explorador" description="Para quem deseja explorar o mundo com muito conforto." price="999" styleTitle={{color: "#BB2A00"}} styleBg={{backgroundColor: "#BB2A00"}}/>
+              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Básico")}} title="Básico" description="Feito para quem busca simplicidade no seu dia-a-dia." price="599" styleTitle={{color: "#FF8514"}} styleBg={{backgroundColor: "#FF8514"}} showArrow={this.state.showArrow} />
+              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Nômade")}} title="Nômade" description="O melhor plano para quem quer flexibilidade em suas estadias." price="799" styleTitle={{color: "#D65A36"}} styleBg={{backgroundColor: "#D65A36"}} showArrow={this.state.showArrow} />
+              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Explorador")}} title="Explorador" description="Para quem deseja explorar o mundo com muito conforto." price="999" styleTitle={{color: "#BB2A00"}} styleBg={{backgroundColor: "#BB2A00"}} showArrow={this.state.showArrow} />
             </div>
 
             <div className="form__circles-container">
-              <div className="circle circle-active"></div>
-              <div className="circle"></div>
-              <div className="circle"></div>
+              <div className="circle circle-active" onClick={(e) => this.sectionManager(e, 0)}></div>
+              <div className="circle circle-active" onClick={(e) => this.sectionManager(e, 1)}></div>
+              <div className="circle" onClick={(e) => this.sectionManager(e, 2 )}></div>
             </div>
           </div>
         </div>
@@ -153,12 +192,12 @@ class Form extends Component {
             <label htmlFor="" className="form__label">CPF do titular</label>
             <input type="text" className="form__input"/>
 
-            <button className="form__continue" onClick={(e) => this.fillCircle(e)}>Finalizar</button>
+            <button className="form__continue" onClick={(e) => this.handleSubmit(e)}>Finalizar</button>
 
             <div className="form__circles-container">
-              <div className="circle circle-active"></div>
-              <div className="circle"></div>
-              <div className="circle"></div>
+              <div className="circle circle-active" onClick={(e) => this.sectionManager(e, 0)}></div>
+              <div className="circle circle-active" onClick={(e) => this.sectionManager(e, 1)}></div>
+              <div className="circle circle-active" onClick={(e) => this.sectionManager(e, 2)}></div>
             </div>
           </div>
         </div>
