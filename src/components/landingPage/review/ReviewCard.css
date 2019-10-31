@@ -37,6 +37,7 @@
 
 .review-card__img {
   width: 20rem;
+  height: 20rem;
   border-radius: 50%;
   margin-bottom: 4rem;
 }
@@ -74,6 +75,7 @@
 
   .review-card__img {
     width: 10rem;
+    height: 10rem;
     margin-bottom: 2rem;
   }
 
