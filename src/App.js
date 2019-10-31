@@ -11,13 +11,9 @@ import LandingPage from "./components/landingPage/LandingPage";
 import Signup from "./components/signup/Signup";
 import Profile from './components/profile/Profile';
 import Pricing from './components/pricing/Pricing';
-import {
-  CSSTransition,
-  TransitionGroup,
-} from 'react-transition-group';
 
 import "./App.css";
-import Home from './components/home/Home'
+
 class App extends Component {
   constructor(props) {
     super(props);
