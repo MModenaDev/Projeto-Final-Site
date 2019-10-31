@@ -3,17 +3,21 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './Home.css';
 import Map from '../map/map';
 import NavbarLog from '../navbar/NavbarLog';
+import Footer from '../landingPage/footer/Footer'
 
 
 class Home extends Component {
 
+  componentWillUnmount() {
+    console.log('unmount')
+  }
+
   render(){
     return(
       <Fragment>
-
       <NavbarLog />
-      <div className="container-fluid">
-        <div className="row fixed-top-1 d-md-none">
+      <div  className="container-fluid">
+        <div data-aos="fade-right" className="row fixed-top-1 d-md-none">
           <div className="col-12 head-home d-flex justify-content-center align-items-center">
             <h2>São Paulo</h2>
           </div>
@@ -37,6 +41,7 @@ class Home extends Component {
               </div>
             </div>
           </div>
+
 
         </div>
         <div className="row d-none d-md-flex fixed-right">
@@ -88,6 +93,7 @@ class Home extends Component {
 
         </div>
       </div>
+      <Footer />
       </Fragment>
     )
   }

@@ -5,16 +5,22 @@
   height: 70px;
 }
 
-.foot-img {
-  width: 3rem;
-}
 
 .foot-img img { 
-  width: 100%;
+  width: 4rem;
 }
 
 .footer-text {
   font-size: 1.1rem !important;
   color: #BDBDBD;
+  text-decoration: none;
+  text-align: center;
+}
 
+.active span, img{
+  color: orange;
+}
+
+a:hover{
+  text-decoration: none;
 }

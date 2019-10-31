@@ -9,7 +9,7 @@
 
 .searchbar-log {
   background: rgb(207, 207, 207);
-  border-radius: 10px;
+  border-radius: 5px;
   border-color: transparent;
   height: 4rem;
   width: 80%;
@@ -18,9 +18,9 @@
   font-size: 2rem;
 }
 
-.searchbar:focus {
+.searchbar-log:focus {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.356);
+  background-color: rgba(170, 170, 170, 0.356);
 }
 
 .img-nav img {

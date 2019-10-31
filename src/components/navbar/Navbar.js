@@ -2,22 +2,49 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Navbar.css'
 import { Link } from 'react-router-dom'
+import Logowhite1 from '../../logowhite1.svg'
+import Logowhite from '../../logowhite.svg'
+import Logoorange1 from '../../logoorange1.svg'
+import Logoorange from '../../logoorange.svg'
 
 class Navbar extends Component {
+
   constructor(props){
     super(props)
-
+    this.imgdesk = Logowhite1
+    this.imgmob = Logowhite
     this.state = {
       arrowAction : true,
-      isTop: true,
+      isTop : true,
+  
     }
   }
 
+  someMethod() {
+    // Force a render without state change...
+    this.forceUpdate();
+}
+
   componentDidMount() {
+    console.log('mounted')
+    this.changeState()
+  }
+
+  // componentWillUnmount() {
+  //   console.log('unmount')
+  //   this.setState({
+  //     isTop : true,
+  //   })
+  // }
+
+  changeState(){
     document.addEventListener('scroll', () => {
       const isTop = window.scrollY < document.documentElement.clientHeight;
       if (isTop !== this.state.isTop) {
+        console.log(this.imgdesk)
         this.setState({ isTop })
+        this.imgdesk = Logoorange1
+        this.imgmob = Logoorange
         this.changeColor()
       }
     });
@@ -25,12 +52,18 @@ class Navbar extends Component {
 
   changeColor(){
     this.nav = document.getElementById("nav")
-    if(this.state.isTop){
-      console.log('cor')
-      this.nav.classList.remove('navbar-scrolled')
-    } else this.nav.classList.add('navbar-scrolled')
+    if(!this.state.isTop){
+      this.imgdesk = Logowhite1
+      this.imgmob = Logowhite 
+      console.log('transparente')
+      this.nav.classList.add('navbar-scrolled')
+    } else {this.nav.classList.remove('navbar-scrolled')
+      this.imgdesk = Logoorange1
+      this.imgmob = Logoorange
+      console.log('laranja')}
   }
 
+  
   
 
   changeArrow(){
@@ -43,6 +76,7 @@ class Navbar extends Component {
       this.arrowButton.src = "./images/angle-arrow-down.png"
       this.nav.classList.remove('nav2-changes')
       this.body.style.overflow = "hidden"
+      this.imgmob = Logoorange
       this.setState({
         arrowAction : false
       })
@@ -51,6 +85,7 @@ class Navbar extends Component {
       this.nav.classList.add('nav2-changes')
       this.arrowButton.src = "./images/up-arrow.png"
       this.body.style.overflow = "visible"
+      this.imgmob = Logowhite
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0;
       this.setState({
@@ -69,11 +104,13 @@ class Navbar extends Component {
             <div className="row d-flex align-items-center">
 
               <div className="col-2 col-md-2 text-center p-0 d-none d-md-block">
-                <Link to="/">LOGO</Link>
+                <Link to="/">
+                  <img className='logo-sizedesk' src={this.imgdesk} alt=""/>
+                </Link>
               </div>
 
               <div onClick={() => this.changeArrow()} className="col-2 col-md-2 text-center p-0 d-md-none">
-                LOGO
+                <img className='logo-sizemob' src={this.imgmob} alt=""/>
               </div>
 
               <div onClick={() => this.changeArrow()} className="col-1 arrows d-flex d-md-none justify-content-left p-0">
@@ -86,10 +123,14 @@ class Navbar extends Component {
               <div className="col-6 d-none d-md-flex ">
                 <div className="row d-flex align-items-center justify-content-end">
                   <div className="col-3">
-                    <a href="/">Homes</a>
+                    <Link to="/">Home</Link>
                   </div>
-                  <div className="col-3">Plans</div>
-                  <div className="col-3">About</div>
+                  <div className="col-3">
+                    <Link to="/">Home</Link>
+                  </div>
+                  <div className="col-3">
+                  < Link to="/home">About</Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -101,7 +142,7 @@ class Navbar extends Component {
               <Link className='my-3' to="/">Home</Link>
               <Link className='my-3' to="/home">Places</Link>
               <Link className='my-3' to="/">Pricing</Link>
-              <Link className='my-3' to="/">About</Link>
+              <Link className='my-3' to="/home">About</Link>
             </div>
           </div>
         </div>

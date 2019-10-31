@@ -7,6 +7,14 @@
   font-size: 1.7rem;
 }
 
+.logo-sizedesk {
+  width: 75%;
+}
+
+.logo-sizemob {
+  width: 55%;
+}
+
 .navbar a {
   color: white;
 }
@@ -14,6 +22,7 @@
 .navbar-scrolled{
   background-color: white;
   color:  #FB5D30;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .navbar-scrolled a {

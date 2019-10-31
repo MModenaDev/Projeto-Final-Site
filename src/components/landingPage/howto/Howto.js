@@ -10,8 +10,8 @@ class Howto extends Component {
   render(){
     return(
 
-      <div className="howto-container">
-        <h2 className="howto__title">Como usar o NSA</h2>
+      <div data-aos="fade-right" className="howto-container">
+        <h2 className="howto__title">Como usar o Wander</h2>
         <p className="howto__description">Queremos proporcionar ao nosso usuário uma experiência única, desde o agendamento até a hospedagem</p>
         <div className="howto__card-container">
 

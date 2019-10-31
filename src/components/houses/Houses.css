@@ -1,0 +1,52 @@
+.house-page {
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.left-side {
+  height: 85vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.book-room {
+  height: 15vh;
+  background: linear-gradient(180deg, #FF8514 0%, #D56210 100%);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 42px;
+  color: #FFFFFF;
+}
+
+.house-info {
+  height: 18vh;
+}
+
+.house-info1{
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 61.98%, #000000 100%);
+}
+
+.house-title{
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3rem;
+  color: #FFFFFF;
+}
+
+.house-address{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  color: #FFFFFF
+}
+
+.house-capacity{
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: #FF8514;
+}

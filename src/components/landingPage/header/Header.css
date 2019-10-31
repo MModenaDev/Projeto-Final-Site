@@ -4,7 +4,6 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;
   height: 100%;
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 88%);
 }
 
 .pre-header {

@@ -18,10 +18,7 @@ function LandingPage(props) {
       <Howto />
       <Placesdesk />
       <Placesmob />
-      {/* <Admin></Admin> */}
-      <Placesmob />
       <Review />
-      <Map />
     </div>  
   );
 }

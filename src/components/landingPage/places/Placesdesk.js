@@ -8,7 +8,7 @@ class Placesdesk extends Component {
 
   render() {
     return (
-        <div className="container-fluid placesdesk d-none d-md-flex">
+        <div data-aos="zoom-in-right" className="container-fluid placesdesk d-none d-md-flex">
             <h1 className="placedesk__title">Regiões</h1>
             <p className="placedesk__description">Conheça os lugares que possuimos nossas instalações e escolha a melhor para você</p>
             <div className="col-12">
