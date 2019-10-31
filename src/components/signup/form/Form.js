@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PriceCard from '../priceCard/PriceCard'
+import PriceCard from '../../priceCard/PriceCard'
 import './Form.css';
 
 class Form extends Component {

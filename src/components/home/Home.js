@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './Home.css';
 import Map from '../map/map';
 import NavbarLog from '../navbar/NavbarLog';
-
+import Footer from '../footer/Footer';
 
 class Home extends Component {
 
@@ -88,6 +88,7 @@ class Home extends Component {
 
         </div>
       </div>
+      <Footer />
       </Fragment>
     )
   }

@@ -5,13 +5,15 @@ import AuthService from "./components/auth/auth-service";
 import Admin from "./components/admin/Admin";
 import LandingPage from "./components/landingPage/LandingPage";
 import Signup from "./components/signup/Signup";
+import Profile from './components/profile/Profile';
+import Pricing from './components/pricing/Pricing';
 import {
   CSSTransition,
   TransitionGroup,
 } from 'react-transition-group';
 
 import "./App.css";
-
+import Home from './components/home/Home'
 class App extends Component {
   constructor(props) {
     super(props);
@@ -66,6 +68,9 @@ class App extends Component {
           <Route path="/" exact={true} render={(props)  => <LandingPage login={this.state.showLogin} changeLogin={this.changeLogin} {...props} />} />
           <Route path="/signup" exact={true} component={Signup} />
           <Route path="/dashboard" exact={true} component={Admin} />
+          <Route path="/profile" exact={true} component={Profile} />
+          <Route path="/home" exact={true} component={Home} />
+          <Route path="/pricing" exact={true} component={Pricing} />
           {/* <Route patch="/home" component={Home} /> */}
         </Switch>
       </div>

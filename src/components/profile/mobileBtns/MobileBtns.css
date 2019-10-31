@@ -1,0 +1,23 @@
+.profile-mobileBtns {
+  margin-top: 1.5rem;
+  display: none;
+  width: 26rem;
+  justify-content: space-between;
+}
+
+.profile-mobileBtns__btn {
+  width: 12.5rem;
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  color: #f1f1f1;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  outline: none;
+}
+
+@media screen and (max-width: 450px) {
+  .profile-mobileBtns {
+    display: flex;
+  }
+}
