@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import './Modal.css';
 import axios from "axios";
-import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 import ImageUpload from './images/images'
+import Loader from 'react-loader-spinner'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 class Modal extends Component {
     constructor(props) {
@@ -30,18 +31,18 @@ class Modal extends Component {
         }
         this.onClickHandler = this.onClickHandler.bind(this);
         this.onChangeHandler = this.onChangeHandler.bind(this);
+        this.onChangePicture = this.onChangePicture.bind(this)
         this.showPictures = this.showPictures.bind(this);
         this.removeImage = this.removeImage.bind(this);
     }
 
     onClickHandler()  {
         if(this.props.modalId === "editHouse") {
-            this.setState({images: this.state.uploadingImages})         
             axios.put(`https://projfinal-dev.herokuapp.com/api/house/${this.state._id}`, this.state)
                 .then(this.setState({
                     name: "",
                     maxBooking: "",
-                    images: "",
+                    images: [],
                     description: "",
                     numberRooms: 0,
                     numberBath: 0,
@@ -56,8 +57,7 @@ class Modal extends Component {
                     country:"",
                 }))
                 .catch(err => console.log(err))
-        } else {
-            this.setState({images: this.state.uploadingImages})
+        } else {            
             axios.post(`https://projfinal-dev.herokuapp.com/api/house/new`, this.state)
                 .then(this.setState({
                     name: "",
@@ -91,7 +91,6 @@ class Modal extends Component {
         if(newValue != this.props && newValue.modalId === "editHouse"){
             const { name, description, maxBooking, images, numberRooms, numberBath, garage, numberGarage, plan, street, streetNumber, complement, city, state, country, _id } = newValue.home;
             this.setState({ name, description, maxBooking, images, numberRooms, numberBath, garage, numberGarage, plan, street, streetNumber, complement, city, state, country, _id});
-            this.setState({uploadingImages: this.state.images})
         }
     }
 
@@ -104,41 +103,44 @@ class Modal extends Component {
         files.forEach((file, i) => {
           formData.append(i, file)
         })
-        fetch(`http://localhost:5000/api/image-upload`, {
+        fetch(`https://projfinal-dev.herokuapp.com/api/image-upload`, {
           method: 'POST',
           body: formData
         })
         .then(res => res.json())
-        .then(image => {
-     
+        .then(image => {     
           this.setState({ 
             uploading: false,
-            uploadingImages: this.state.uploadingImages.concat(image)
-          })
+            images: this.state.images.concat(image),
+          })          
         })
       }
 
     removeImage(id) {
-        const { uploadingImages } = this.state;
-        let uploadingImagesAdj = uploadingImages.filter(image => image.public_id !== id)        
-        this.setState({uploadingImages: uploadingImagesAdj})
+        const { images } = this.state;
+        let uploadingImagesAdj = images.filter(image => image.public_id !== id)        
+        this.setState({images: uploadingImagesAdj})
+        
     }
-
+    
     showPictures() {
-      const { uploadingImages } = this.state;
-    //   if(this.props.modalId === "editHouse") {
-    //     this.setState({uploadingImages: this.state.images})
-    //     return uploadingImages.map(image => {            
-    //         return (<ImageUpload image={image} removeImage={this.removeImage}/>)
-    //     })  
-    //   } else {
-        return uploadingImages.map(image => {            
-            return (<ImageUpload image={image} removeImage={this.removeImage}/>)
-        })
-    //   }
+      const { images } = this.state;
+    //   switch (true) {
+    //       case this.state.uploadingPhoto:
+    //           return (<Loader
+    //             type="Plane"
+    //             color="#FB5D30"
+    //             height={100}
+    //             width={100}
+    //         />)
+    //       case this.state.images.length > 0:
+                return images.map(image => {
+                    return (<ImageUpload image={image} removeImage={this.removeImage}/>)
+      })
+    // }
     }
 
-    render() {
+    render() {        
         return (
             <div className="modal" tabIndex="-1" role="dialog" id={this.props.modalId}>
                 <div className="modal-dialog" role="document">
