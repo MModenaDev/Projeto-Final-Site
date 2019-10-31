@@ -1,5 +1,4 @@
 .card-bg {
-  background-image: url('/images/places.png');
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px;
@@ -35,7 +34,6 @@
 
 
 .card-bg-desk {
-  background-image: url('/images/places.png');
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px;

@@ -77,6 +77,7 @@ class App extends Component {
             <Route path="/pricing" exact={true} component={Pricing} />
             <Route path="/ourcities" exact={true} component={Ourcities} />
             <Route exact path="/home/:city" component={Home} />
+            <Route exact path="/home-details/:id" component={Houses} />
             {(this.state.loggedInUser)?(
               <ProtectedRoute 
                 user={this.state.loggedInUser}

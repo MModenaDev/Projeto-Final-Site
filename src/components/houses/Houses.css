@@ -50,3 +50,16 @@
   text-align: center;
   color: #FF8514;
 }
+
+.house-loading {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.house-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
