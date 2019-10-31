@@ -14,10 +14,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import Profile from './components/profile/Profile';
 import Pricing from './components/pricing/Pricing';
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 import "./App.css";
 
 AOS.init();
@@ -80,6 +76,7 @@ class App extends Component {
             <Route path="/profile" exact={true} component={Profile} />
             <Route path="/pricing" exact={true} component={Pricing} />
             <Route exact path="/home/:city" component={Home} />
+            <Route exact path="/home-details/:id" component={Houses} />
             {(this.state.loggedInUser)?(
               <ProtectedRoute 
                 user={this.state.loggedInUser}
