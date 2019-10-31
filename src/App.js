@@ -10,6 +10,8 @@ import {
   TransitionGroup,
 } from 'react-transition-group';
 
+import Home from './components/home/Home'
+
 import "./App.css";
 
 class App extends Component {
@@ -66,7 +68,7 @@ class App extends Component {
           <Route path="/" exact={true} render={(props)  => <LandingPage login={this.state.showLogin} changeLogin={this.changeLogin} {...props} />} />
           <Route path="/signup" exact={true} component={Signup} />
           <Route path="/dashboard" exact={true} component={Admin} />
-          {/* <Route patch="/home" component={Home} /> */}
+          <Route exact path="/home/:city" component={Home} />
         </Switch>
       </div>
     );

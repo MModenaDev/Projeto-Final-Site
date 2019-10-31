@@ -14,6 +14,8 @@ class Navbar extends Component {
   }
 
   componentDidMount() {
+    this.nav = document.getElementById("nav")
+    this.nav.classList.remove('navbar-scrolled')
     document.addEventListener('scroll', () => {
       const isTop = window.scrollY < document.documentElement.clientHeight;
       if (isTop !== this.state.isTop) {
@@ -25,10 +27,12 @@ class Navbar extends Component {
 
   changeColor(){
     this.nav = document.getElementById("nav")
-    if(this.state.isTop){
-      console.log('cor')
-      this.nav.classList.remove('navbar-scrolled')
-    } else this.nav.classList.add('navbar-scrolled')
+    if (this.nav) {
+      if(this.state.isTop){
+        console.log('cor')
+        this.nav.classList.remove('navbar-scrolled')
+      } else this.nav.classList.add('navbar-scrolled')
+    }
   }
 
   
