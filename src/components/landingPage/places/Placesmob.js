@@ -11,7 +11,7 @@ class Placesmob extends Component {
       <div className="container-fluid d-flex d-md-none placesmob">
         <div className="row">
           <div className="col-12">
-            <h1>Regiões</h1>
+            <h1 id="placesmob-title">Regiões</h1>
           </div>
           <div className="col-12 margin-fix">
             <h3>Conheça os lugares que possuimos nossas instalações e escolha a melhor para você</h3>
