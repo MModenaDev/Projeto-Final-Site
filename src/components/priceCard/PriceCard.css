@@ -163,3 +163,19 @@
     margin: 0 2px 0 0;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .form-container__outer:nth-of-type(2) {
+    overflow-y: scroll;
+  }
+
+  .form__card-container {
+    flex-direction: column;
+  }
+
+  .form-card {
+    width: 100%;
+  }
+
+  
+}

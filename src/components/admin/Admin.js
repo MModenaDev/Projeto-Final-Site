@@ -16,7 +16,7 @@ class Admin extends Component {
                 _id: "",
                 name: "",
                 maxBooking: "",
-                images: "",
+                images: [],
                 description: "",
                 numberRooms: "",
                 numberBath: "",

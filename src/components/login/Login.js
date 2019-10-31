@@ -55,7 +55,7 @@ class Login extends Component{
         this.props.getUser(response);
         this.props.history.push(this.props.location.prevPath);
       })
-      .catch(error => this.setState({ message: error.response.data.message }))
+      .catch(error => console.log(error))
 
   }
 

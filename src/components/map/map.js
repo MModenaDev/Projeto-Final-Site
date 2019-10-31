@@ -78,5 +78,5 @@ class MapGoogle extends React.Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: process.env.GOOGLE_KEY
+  apiKey: 'AIzaSyB36sT0tIu-0uCfJR1zWHsD8Ku1d5mKLrA'
 })(MapGoogle);

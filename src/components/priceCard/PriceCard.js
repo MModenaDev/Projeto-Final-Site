@@ -6,30 +6,31 @@ class PriceCard extends Component {
     super(props);
 
     this.state = {
-      cardOpen1: true,
-      cardOpen2: true,
-      cardOpen3: true,
+      showInfo: true
     }
 
     this.toggleCard = this.toggleCard.bind(this);
   }
 
-  toggleCard() {
-    let allArrows = document.querySelectorAll('.form-card__arrow');
-    // Como?
-    console.log('should toggle');
+  componentDidMount() {
+    if(this.props.showArrow) this.setState({ showInfo: false });
+    if(window.innerWidth < 450) this.setState({ showInfo: false});
   }
 
-  render(props) {
+  toggleCard() {
+    this.setState({ showInfo: !this.state.showInfo});
+  }
+
+  render() {
     return (
       <div className="form-card">
         <div className="form-card__header">
           <h3 className="form-card__title" style={this.props.styleTitle}>{this.props.title}</h3>
-          <img src="/images/upArrow.svg" alt="upward pointing arrow" className="form-card__arrow" onClick={() => this.toggleCard()}/>
+          {(this.props.showArrow)?(<img src={this.props.arrowUrl} alt="upward pointing arrow" className="form-card__arrow" onClick={() => this.toggleCard()}/>):null}
         </div>
         <p className="form-card__description">{this.props.description}</p>
 
-        <div className="form-card__collapse">
+        {(this.state.showInfo)?(<div className="form-card__collapse">
           <div className="form-card__hr-like"></div>
 
           <div className="form-card__price-container">
@@ -52,8 +53,8 @@ class PriceCard extends Component {
               <p className="form-card__benefits-container--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             
-            <button className="form-card__btn" onClick={this.props.btnClick} style={this.props.styleBg}>Quero esse plano!</button>
-        </div>
+            <button className="form-card__btn" plan={this.props.title} onClick={this.props.btnClick} style={this.props.styleBg}>Quero esse plano!</button>
+        </div>):null}
       </div>
     );
   }

@@ -38,6 +38,8 @@ class Navbar extends Component {
   // }
 
   changeState(){
+    this.nav = document.getElementById("nav")
+    this.nav.classList.remove('navbar-scrolled')
     document.addEventListener('scroll', () => {
       const isTop = window.scrollY < document.documentElement.clientHeight;
       if (isTop !== this.state.isTop) {
@@ -52,16 +54,18 @@ class Navbar extends Component {
 
   changeColor(){
     this.nav = document.getElementById("nav")
-    if(!this.state.isTop){
-      this.imgdesk = Logowhite1
-      this.imgmob = Logowhite 
-      console.log('transparente')
-      this.nav.classList.add('navbar-scrolled')
-    } else {this.nav.classList.remove('navbar-scrolled')
-      this.imgdesk = Logoorange1
-      this.imgmob = Logoorange
-      console.log('laranja')}
-  }
+    if (this.nav){
+      if(!this.state.isTop){
+        this.imgdesk = Logowhite1
+        this.imgmob = Logowhite 
+        console.log('transparente')
+        this.nav.classList.add('navbar-scrolled')
+      } else {this.nav.classList.remove('navbar-scrolled')
+        this.imgdesk = Logoorange1
+        this.imgmob = Logoorange
+        console.log('laranja')}
+    }
+    }
 
   
   

@@ -1,0 +1,76 @@
+.profile-content__booking {
+  width: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 25rem;
+}
+
+.myRow {
+  width: 100%;
+}
+
+.profile-booking__btns-container {
+  margin-top: 1rem;
+  width: 83%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-booking__btns-container--btns1 {
+  width: 50%;
+  font-size: 2rem;
+  border-radius: 2rem 0 0 0;
+  border: none;
+  color: #f1f1f1;
+  padding: .8rem 2rem;
+  font-weight: 500;
+}
+
+.profile-booking__btns-container--btns2 {
+  width: 50%;
+  font-size: 2rem;
+  border-radius: 0 2rem 0 0;
+  border: none;
+  color: #f1f1f1;
+  padding: .8rem 2rem;
+  font-weight: 500;
+}
+
+.booking-container__scroll {
+  width: 48.8rem;
+  border-radius: 0 0 1rem 1rem;
+  border: 5px solid #BB2A00;
+  height: 30rem;
+  box-sizing: content-box;
+  overflow-y: scroll;
+  padding-bottom: 1rem;
+}
+
+.profile-content__booking-current {
+  font-size: 2.4rem;
+  margin-bottom: -1rem;
+}
+
+@media screen and (max-width: 1500px) {
+  .profile-content__booking {
+    width: 50rem;
+    margin-right: 0;
+  }
+
+  .booking-container__scroll {
+    width: 40.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .profile-content__booking {
+    width: 38rem;
+    margin: 2rem auto 0 auto;
+  }
+
+  .booking-container__scroll {
+    width: 30.5rem;
+  }
+}

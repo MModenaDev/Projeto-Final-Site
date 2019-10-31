@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Placesmob.css'
 import Homecitymob from './cities/Homecitymob';
+import { Link } from 'react-router-dom'
 
 class Placesmob extends Component {
  
@@ -15,10 +16,18 @@ class Placesmob extends Component {
           <div className="col-12 margin-fix">
             <h3>Conheça os lugares que possuimos nossas instalações e escolha a melhor para você</h3>
           </div>
-          <Homecitymob fade="fade-right" title='São Paulo' imgUrl='./images/saopaulo.png' />
-          <Homecitymob fade="fade-left" title='Bangkok' imgUrl='./images/bangkok.png' />
-          <Homecitymob fade="fade-right" title='Budapest' imgUrl='./images/budapest.png' />
-          <Homecitymob fade="fade-left" title='Taipei' imgUrl='./images/taipei.png' />
+          <Link to="/home/SaoPaulo">
+            <Homecitymob title='São Paulo' imgUrl='./images/saopaulo.png' />
+          </Link>
+          <Link to="/home/Bangkok">
+            <Homecitymob title='Bangkok' imgUrl='./images/bangkok.png' />
+          </Link>
+          <Link to="/home/Budapest">
+            <Homecitymob title='Budapest' imgUrl='./images/budapest.png' />
+          </Link>
+          <Link to="/home/Taipei">
+            <Homecitymob title='Taipei' imgUrl='./images/taipei.png' />
+          </Link>
         </div>
       </div>
     )
