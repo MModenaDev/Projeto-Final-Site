@@ -41,7 +41,7 @@ class Navbar extends Component {
     this.nav = document.getElementById("nav")
     this.nav.classList.remove('navbar-scrolled')
     document.addEventListener('scroll', () => {
-      const isTop = window.scrollY < document.documentElement.clientHeight;
+      const isTop = window.scrollY <= document.documentElement.clientHeight;
       if (isTop !== this.state.isTop) {
         console.log(this.imgdesk)
         this.setState({ isTop })
@@ -56,8 +56,8 @@ class Navbar extends Component {
     this.nav = document.getElementById("nav")
     if (this.nav){
       if(!this.state.isTop){
-        this.imgdesk = Logowhite1
-        this.imgmob = Logowhite 
+        this.imgdesk = Logoorange1
+        this.imgmob = Logoorange
         console.log('transparente')
         this.nav.classList.add('navbar-scrolled')
       } else {this.nav.classList.remove('navbar-scrolled')
@@ -79,7 +79,6 @@ class Navbar extends Component {
       this.nav1.classList.add('navbar-scrolled')
       this.arrowButton.src = "./images/angle-arrow-down.png"
       this.nav.classList.remove('nav2-changes')
-      this.body.style.overflow = "hidden"
       this.imgmob = Logoorange
       this.setState({
         arrowAction : false
@@ -108,9 +107,10 @@ class Navbar extends Component {
             <div className="row d-flex align-items-center">
 
               <div className="col-2 col-md-2 text-center p-0 d-none d-md-block">
-                <Link to="/">
+                <a href="/">
                   <img className='logo-sizedesk' src={this.imgdesk} alt=""/>
-                </Link>
+                </a>
+                
               </div>
 
               <div onClick={() => this.changeArrow()} className="col-2 col-md-2 text-center p-0 d-md-none">
@@ -127,13 +127,13 @@ class Navbar extends Component {
               <div className="col-6 d-none d-md-flex ">
                 <div className="row d-flex align-items-center justify-content-end">
                   <div className="col-3">
-                    <Link to="/">Home</Link>
+                    <Link to="/ourcities">Our Cities</Link>
                   </div>
                   <div className="col-3">
-                    <Link to="/">Home</Link>
+                    <Link to="/pricing">Pricing</Link>
                   </div>
                   <div className="col-3">
-                  < Link to="/home">About</Link>
+                  < Link to="/about">About</Link>
                   </div>
                 </div>
               </div>
@@ -143,10 +143,9 @@ class Navbar extends Component {
         <div id="nav2" className="col-12 p-0 nav2-changes">
           <div className="row d-flex align-items-top  pt-5">
             <div className="col-12 d-flex flex-column justify-content-start mt-2 align-items-center">
-              <Link className='my-3' to="/">Home</Link>
-              <Link className='my-3' to="/home">Places</Link>
-              <Link className='my-3' to="/">Pricing</Link>
-              <Link className='my-3' to="/home">About</Link>
+              <Link className='my-3' to="/ourcities">Our cities</Link>
+              <Link className='my-3' to="/pricing">Pricing</Link>
+              <Link className='my-3' to="/about">About</Link>
             </div>
           </div>
         </div>

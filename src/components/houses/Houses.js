@@ -7,7 +7,7 @@ class Houses extends Component {
   constructor(){
     super()
     
-    this.bgImg = '/images/places.png'
+    this.bgImg = '/home/eric/Documents/Ironhack/PROJETO 3/Projeto-Final-Site/public/images/places.png'
 
   }
 

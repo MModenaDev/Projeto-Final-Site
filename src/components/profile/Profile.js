@@ -8,7 +8,7 @@ import Footer from '../footer/Footer';
 import './Profile.css';
 
 class Profile extends Component {
-  constructor(props) {
+  constructor(props) {  
     super(props);
 
     this.state = {
@@ -60,6 +60,7 @@ class Profile extends Component {
         </div>
         <Footer />
       </Fragment>
+    
     );
   }
 }

@@ -2,12 +2,12 @@
   width: 100%;
   background: #FFFFFF;
   box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.15);
-  height: 70px;
+  height: 8rem;
 }
 
 
 .foot-img img { 
-  width: 4rem;
+  width: 3rem;
 }
 
 .footer-text {

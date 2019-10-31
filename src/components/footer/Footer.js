@@ -16,7 +16,7 @@ class Footer extends Component {
   render(){
     return(
       <div className="container-fluid footer d-flex d-md-none fixed-bottom">
-        <div className="row d-flex align-items-center">
+        <div className="row d-flex align-items-center justify-content-around">
           <Footerico link='/homes' name='Home' imgsrc={this.house1}/>
           <Footerico link='/houses' name='Reservas' imgsrc={this.plane1}/>
           <Footerico link='/home' name='####' imgsrc={this.backpack1}/>

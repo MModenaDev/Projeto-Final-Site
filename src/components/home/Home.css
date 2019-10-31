@@ -4,7 +4,7 @@
   right: 0;
   left: 0;
   z-index: 1029;
-  height: 40vh;
+  height: 40vh !important;
   background-color: white;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .places-row {
-  margin-top: 45vh;
+  margin-top: 45vh !important;
 }
 
 /* ////////////////// LARGE SCREEN */

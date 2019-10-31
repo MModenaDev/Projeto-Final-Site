@@ -19,7 +19,7 @@ class Header extends Component {
     return(
       <div className="container-fluid pre-header">
         <div className="row d-flex justify-content-start header">
-          <div className="home-content">
+          <div  className="home-content">
             <h1 className="home-title">DISCOVER</h1>
             <p className="home-subtitle">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
