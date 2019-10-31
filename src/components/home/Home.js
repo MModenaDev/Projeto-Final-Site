@@ -3,11 +3,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './Home.css';
 import Map from '../map/map';
 import NavbarLog from '../navbar/NavbarLog';
-import Footer from '../landingPage/footer/Footer'
+import Footer from '../footer/Footer'
 import Axios from 'axios';
 import CardMobile from './card/Card-mob';
-
-import Footer from '../footer/Footer';
 
 class Home extends Component {
   constructor(props){
