@@ -111,7 +111,7 @@ class Houses extends Component {
 
   getBookings(e) {
     this.setState({isLoading: true})
-    Axios.get(`https://projfinal-dev.herokuapp.com/api/booking/search/${this.id}?dateStart=${this.state.dateStartInput}&dateFinish=${this.state.dateFinishInput}`)
+    Axios.get(`${process.env.REACT_APP_API_URL}/booking/search/${this.id}?dateStart=${this.state.dateStartInput}&dateFinish=${this.state.dateFinishInput}`)
       .then(response => {
         console.log(response);
         this.setState({slots: response.data, isLoading: false}, () => this.setSlots())

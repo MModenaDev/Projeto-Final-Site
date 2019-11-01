@@ -36,7 +36,7 @@ class Booking extends Component {
 
   getBooking() {
     const { params } = this.props.match    
-    Axios.get(`https://projfinal-dev.herokuapp.com/api/booking/search/${params.id}`)
+    Axios.get(`${process.env.REACT_APP_API_URL}/booking/search/${params.id}`)
       .then(response => {
         this.setState({slots: response.data, isLoading: false}, () => this.setActive())
       })
