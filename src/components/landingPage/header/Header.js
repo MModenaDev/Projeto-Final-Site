@@ -22,11 +22,11 @@ class Header extends Component {
           <div  className="home-content">
             <h1 className="home-title">DISCOVER</h1>
             <p className="home-subtitle">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+              Join a community of travelers around the world.
             </p>
 
-            <p className="home-preLogin">Se você já possui uma conta</p>
-            <button data-toggle="modal" data-target="#login" type="button" className="btn btn-header" onClick={this.openModal}>Faça seu login</button>      
+            <p className="home-preLogin">Already have an account?</p>
+            <button data-toggle="modal" data-target="#login" type="button" className="btn btn-header" onClick={this.openModal}>Login</button>      
           </div>        
         </div>
         {(this.props.login)?(<Login changeLogin={this.props.changeLogin} getUser={this.props.getUser} {...this.props}/>):null}

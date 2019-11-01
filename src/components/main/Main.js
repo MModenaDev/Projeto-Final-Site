@@ -5,8 +5,6 @@ import NavbarLog from '../navbar/NavbarLog'
 import Footer from '../footer/Footer'
 import { Link } from 'react-router-dom'
 import Loader from 'react-loader-spinner'
-import Axios from 'axios';
-
 
 class Main extends Component {
   constructor(){
