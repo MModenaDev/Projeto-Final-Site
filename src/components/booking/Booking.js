@@ -7,14 +7,15 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import ReactDOM from 'react-dom';
+import { ETIME } from 'constants';
 
 class Booking extends Component {
   constructor(props) {
     super(props)
     this.state = {
       slots: [],
-      dateStart: '',
-      dateFinish: '',
+      dateStartInput: '',
+      dateFinishInput: '',
       activeStart: false,
       activeCard: [],
       isLoading: false,
@@ -100,23 +101,33 @@ class Booking extends Component {
 
   activeCard(e, idx) {    
     (this.state.activeStart) ? (this.setState({activeStart: !this.state.activeStart})) : this.setState({activeStart: !this.state.activeStart})
-
   }
 
-  activateCard(idx) {
-    let el = document.getElementsById(`${idx}`)
-  }
+  // onClickSearch() [
+
+  // ]
 
   showSlots() {
     let dateToday = new Date()
-    let dateTodayAdj = dateToday.toString();
-    
+    let dateTodayAdj = dateToday.toString();    
     let dateTodayNew = new Date(this.adjustDate(dateTodayAdj)+"GMT-0000")
+
+    let arrDateFinish = this.state.dateFinishInput.split('-')
+    let dateFinishInputAdj = new Date(Number(arrDateFinish[0]), Number(arrDateFinish[1]) -1, Number(arrDateFinish[2]), 0, 0, 0);
+    let dateFinishInputNew = new Date(this.adjustDate(dateFinishInputAdj)+"GMT-0000")
+
+    let arrDateStart = this.state.dateStartInput.split('-')
+    let dateStartInputAdj = new Date(Number(arrDateStart[0]), Number(arrDateStart[1]) -1, Number(arrDateStart[2]), 0, 0, 0);
+    let dateStartInputNew = new Date(this.adjustDate(dateStartInputAdj)+"GMT-0000")
+
     return this.state.slots.map((slot, idx) => {      
       let dateStartAdj = slot.dateStart.toString();
-      let dateStartNew = new Date(this.adjustDate(dateStartAdj)+"GMT-0000")
-      let activeStartCopy = this.state.activeCard
-      if (dateStartNew >= dateTodayNew) { 
+      let dateStartNew = new Date(this.adjustDate(dateStartAdj)+"GMT-0300")      
+
+      let dateFinishAdj = slot.dateFinish.toString();
+      let dateFinishNew = new Date(this.adjustDate(dateFinishAdj)+"GMT-0300")
+      
+      if (dateFinishInputNew = "" && dateStartNew >= dateTodayNew && dateFinishNew <= dateFinishInputAdj) { 
         return (
           <div key={idx} className={(this.state.activeStart) ? "booking-card" : "booking-card active-card"} id={idx} onClick={(e, idx) => this.activeCard(e, idx)}>
             <h1 className="booking-title">{this.adjustDateShow(dateStartAdj)}</h1>
@@ -135,7 +146,16 @@ class Booking extends Component {
 render() {
   return(
     (!this.state.isLoading && this.state.slots !== []) ? (
-      <div className="booking-container">{this.showSlots()}</div>        
+      <Fragment>
+        <div>
+          <label for="dateStart">Date Start:</label>
+          <input type="date" name="dateStartInput" placeholder="YYYY/MM/DD" value={this.state.dateStart} onChange={(e) => this.onChangeHandler(e)}/>
+          <label for="dateFinish">Date Finish:</label>
+          <input type="date" name="dateFinishInput" placeholder="YYYY/MM/DD" value={this.state.dateFinish} onChange={(e) => this.onChangeHandler(e)}/>
+          {/* <button onClick={}>Search</button> */}
+        </div>
+        <div className="booking-container">{this.showSlots()}</div>        
+      </Fragment>
     ) : (
       <div className="house-loading">
         <Loader className="house-loader" type="Plane" color="#FB5D30" height={100} width={100}/>

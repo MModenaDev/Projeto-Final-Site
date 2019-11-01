@@ -13,8 +13,9 @@ class Houses extends Component {
     super(props)
     this.state = {
       isLoading: false,
-      house: {images: []}
+      house: {images: []}      
     }
+    
     this.id = this.props.match.params.id
     this.bgImg = '/images/places.png'
     this.getHouse = this.getHouse.bind(this)
