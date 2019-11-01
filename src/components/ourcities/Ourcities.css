@@ -1,4 +1,4 @@
-.main-page {
+.ourcities-page {
   width: 100vw;
   min-height: 100vh;
   height: auto;
@@ -8,11 +8,12 @@
   background-attachment: fixed;
 }
 
-.main-page2 {
+.ourcities-page2 {
   background-color: rgba(255, 255, 255, 0.411);
   height: 100%;
   width: 100%;
   padding-top: 14rem;
+  padding-bottom: 10rem;
 }
 
 .homecitydesk-page {
@@ -30,4 +31,15 @@
   line-height: 49px;
   text-align: center;
   text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+.ourcities-mobile {
+  background-color: rgba(255, 255, 255, 0.411);
+  height: 100%;
+  width: 100%;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }

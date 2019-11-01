@@ -1,14 +1,19 @@
 import React, { Component, Fragment } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import './Ourcities.css'
-import Navbar from '../navbar/Navbar'
-import Homecitydesk from '../landingPage/places/cities/Homecitydesk';
-import Homecitymob from '../landingPage/places/cities/Homecitymob';
+import './Main.css'
+import NavbarLog from '../navbar/NavbarLog'
+import Footer from '../footer/Footer'
 import { Link } from 'react-router-dom'
+import Loader from 'react-loader-spinner'
+import Axios from 'axios';
 
-class Ourcities extends Component {
+
+class Main extends Component {
   constructor(){
     super()
+    this.state = {
+      isLoading: false,
+    }
     this.spImg = '/images/saopaulo.png'
     this.bangImg = '/images/bangkok.png'
     this.budImg = '/images/budapest.png'
@@ -18,42 +23,39 @@ class Ourcities extends Component {
     this.tokImg = '/images/tokyo.jpg'
     this.belImg = '/images/belgrade.jpg'
     this.istImg = '/images/istambul.jpg'
+
+    this.planeLoading = this.planeLoading.bind(this)
   }
+
+  
+
+    componentDidMount() {
+      this.setState({isLoading: true}, () => this.planeLoading())
+    }
+
+    planeLoading(){
+      console.log('PLANE')
+      let x = setTimeout(() => this.setState({
+        isLoading: false
+      }), 1000)
+    }
+
 
 
   render(){
     return(
+      (!this.state.isLoading)?(
       <Fragment>
-        <Navbar />
-        <div className="container-fluid ourcities-page">
-          <div className="row d-none d-md-flex justify-content-center ourcities-page2">
-              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4" to="/home/Bangkok">
-                <Homecitydesk title='Bangkok' videosrc='./videos/bangkokmovie.mp4' />
-              </Link>
-              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4"  to="/home/Budapest">
-                <Homecitydesk title='Budapest' videosrc='./videos/budapestmovie.mp4' />
-              </Link>
-              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4" to="/home/Taipei">
-                <Homecitydesk title='Taipei' videosrc='./videos/taipeimovie.mp4' />
-              </Link>
-              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4" to="/home/SaoPaulo">
-                <Homecitydesk title='São Paulo' videosrc='./videos/spmovie2.mp4' />
-              </Link>
-              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4" to="/home/Bangkok">
-                <Homecitydesk title='Bangkok' videosrc='./videos/bangkokmovie.mp4' />
-              </Link>
-              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4"  to="/home/Budapest">
-                <Homecitydesk title='Budapest' videosrc='./videos/budapestmovie.mp4' />
-              </Link>
-              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4" to="/home/Taipei">
-                <Homecitydesk title='Taipei' videosrc='./videos/taipeimovie.mp4' />
-              </Link>
-              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4" to="/home/SaoPaulo">
-                <Homecitydesk title='São Paulo' videosrc='./videos/spmovie2.mp4' />
-              </Link>
+        <NavbarLog />
+        <div className="container-fluid">
+          <div className="row main-header">
+            <div className="col-12 d-flex align-items-end">
+              <span className="main-title">explore the WORLD</span>
+              <img src="./images/world.svg" alt=""/>
             </div>
-          <div className="row d-flex d-md-none ourcities-mobile justify-content-center">
-          <Link to="/home/SaoPaulo" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center" style={{backgroundImage: `url(${this.spImg})`}}>
+          </div>
+          <div className="row main-city-cards mt-5 d-flex justify-content-around">
+            <Link to="/home/SaoPaulo" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center" style={{backgroundImage: `url(${this.spImg})`}}>
               <span>SÃO PAULO</span>
               <span className="country">Brasil</span>
             </Link>
@@ -90,11 +92,18 @@ class Ourcities extends Component {
               <span className="country">Turkey</span>
             </Link>
           </div>
+          
+          
         </div>
-
+        <Footer />
       </Fragment>
+      ):(
+        <div className="house-loading">
+          <Loader className="house-loader" type="Plane" color="#FB5D30" height={100} width={100}/>
+        </div>  
+      )
     )
   }
 }
 
-export default Ourcities
+export default Main

@@ -9,10 +9,10 @@ class NavbarLog extends Component {
   constructor(props) {
     super(props)
 
-    this.house1 = './images/house1.png'
-    this.plane1 = './images/plane1.png'
-    this.backpack1 = './images/backpack1.png'
-    this.profile1 = './images/profile1.png'
+    this.house1 = '/images/house2.png'
+    this.plane1 = '/images/plane2.png'
+    this.backpack1 = '/images/backpack2.png'
+    this.profile1 = '/images/profile2.png'
 
   }
 
@@ -42,9 +42,9 @@ class NavbarLog extends Component {
               </div>
               <div className="col-10 d-none d-md-flex">
                 <div className="row d-flex justify-content-md-end">
-                  <Footerico link='/homes' name='Home' imgsrc={this.house1} />
-                  <Footerico link='/houses' name='Reservas' imgsrc={this.plane1} />
-                  <Footerico link='/home' name='####' imgsrc={this.backpack1} />
+                  <Footerico link='/main' name='Main' imgsrc={this.house1} />
+                  <Footerico link='/houses' name='###' imgsrc={this.plane1} />
+                  <Footerico link='/home' name='Rooms' imgsrc={this.backpack1} />
                   <Footerico link='/profile' name='Profile' imgsrc={this.profile1} />
                 </div>
               </div>

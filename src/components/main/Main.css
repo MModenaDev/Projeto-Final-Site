@@ -1,0 +1,52 @@
+.main-page {
+  height: 100vh;
+  width: 100vw;
+}
+
+.main-header {
+  height: 40vh;
+  width: 100%;
+  background-image: url('/images/mainpagebg.jpg');
+  background-position: 50% 80%;
+  background-size: cover;
+}
+
+.main-title {
+  font-family: nunito,roboto,proxima-nova,proxima nova,sans-serif;
+  font-size: 4rem;
+  color: white;
+  font-weight: 700;
+}
+
+.main-city-cards {
+  height: auto;
+  margin-bottom: 15vh;
+}
+
+.main-header img {
+  height: 35%;
+  margin-left: 2rem;
+}
+
+.city-cards {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+  transition: 1s;
+}
+
+.city-cards:hover span{
+  font-size: 5rem;
+}
+
+.city-cards span {
+  font-weight: 500;
+  font-size: 4rem;
+  color: white;
+  transition: 1s;
+}
+
+.country {
+  font-size: 2rem !important;
+}

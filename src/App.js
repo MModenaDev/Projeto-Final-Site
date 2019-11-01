@@ -8,6 +8,7 @@ import Home from "./components/home/Home"
 import LandingPage from "./components/landingPage/LandingPage";
 import Signup from "./components/signup/Signup";
 import Houses from './components/houses/Houses'
+import Main from './components/main/Main'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import Profile from './components/profile/Profile';
@@ -76,6 +77,7 @@ class App extends Component {
             <Route path="/profile" exact={true} component={Profile} />
             <Route path="/pricing" exact={true} component={Pricing} />
             <Route path="/ourcities" exact={true} component={Ourcities} />
+            <Route path="/main" exact={true} component={Main} />
             <Route exact path="/home/:city" component={Home} />
             <Route exact path="/home-details/:id" component={Houses} />
             {(this.state.loggedInUser)?(

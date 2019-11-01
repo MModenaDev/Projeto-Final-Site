@@ -56,6 +56,16 @@ class Home extends Component {
       return {backgroundImage: 'url(/images/budapest.png)'}
     } else if (this.state.city === 'Taipei') {
       return {backgroundImage: 'url(/images/taipei.png)'}
+    } else if (this.state.city === 'Berlin') {
+      return {backgroundImage: 'url(/images/berlin.jpg)'}
+    } else if (this.state.city === 'Tokyo') {
+      return {backgroundImage: 'url(/images/tokyo.jpg)'}
+    } else if (this.state.city === 'Istanbul') {
+      return {backgroundImage: 'url(/images/istambul.jpg)'}
+    } else if (this.state.city === 'Medellin') {
+      return {backgroundImage: 'url(/images/medellin.jpg)'}
+    } else if (this.state.city === 'Belgrade') {
+      return {backgroundImage: 'url(/images/belgrade.jpg)'}
     }
   }
 
