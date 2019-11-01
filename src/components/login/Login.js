@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Login.css'
 import Input from '../input/Input'
+import LoginInput from './loginInput/LoginInput';
 import AuthService from "../auth/auth-service";
+import { whileStatement } from '@babel/types';
 
 class Login extends Component{
   constructor (props){
@@ -70,37 +72,46 @@ class Login extends Component{
   }
 
   render(){
+
     return( 
       <div className="modal fade" id="login" tabIndex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
           <div id="login-center" className="modal-dialog modal-dialog-scrollable" role="document">
-            <div className="modal-content row">
+            <div className="modal-content">
               <div className="modal-header">
                 <button id="login__close-btn" type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.removeInfo}>
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div className="modal-body row d-flex justify-content-center">
-                <div className="col-12">
+              <div className="modal-body">
+                <div className="login__title">
                   Faça seu Login
                 </div>
-                <div className="col-12 my-2">  
-                  <a href="https://projfinal-dev.herokuapp.com/api/auth/facebook" className='btn btn-face d-flex'>
-                    <img className='icos-fac' src="./images/facebookico.png" alt=""/>
-                    <span className='btn-textface'> Facebook</span>
-                  </a>
+
+                <Link to="https://projfinal-dev.herokuapp.com/api/auth/facebook" className='login__facebook-btn'>
+                  <img className='icos-fac' src="./images/facebookico.png" alt=""/>
+                  Facebook
+                </Link>
+
+                <Link to="https://projfinal-dev.herokuapp.com/api/auth/google"  className='login__google-btn'>
+                  <img className='icos-goo' src="./images/googleico.png" alt=""/>
+                  Google
+                </Link>
+                
+                <div class="login-form__or">
+                  <div class="login-form__or-line"></div>
+                  <p class="login-form__or-text">Ou continue com</p>
+                  <div class="login-form__or-line"></div>
                 </div>
-                <div className="col-12 my-2">
-                  <a href="https://projfinal-dev.herokuapp.com/api/auth/google"  className='btn btn-google d-flex'>
-                    <img className='icos-goo' src="./images/googleico.png" alt=""/>
-                    <span className='btn-textgoog'> Google</span>
-                  </a>
-                </div>
-                <div className="col-12 line">
-                  <div className="lineGray">
-                    <div className="textLine">Ou continue com</div>
-                  </div>
-                </div>
-                <div className="col-12 formLogin">
+
+                <form class="login__modal-form" autocomplete="off">
+                  <LoginInput className="login__modal-input" imgUrl="/images/mail.svg" type="text" name="email" label="Email" id="email" value={this.state.email} changeAction={(e) => this.onChangeHandler(e)} />
+                  <LoginInput className="login__modal-input" imgUrl="/images/locker.svg" type='password' name="password" label='Password' id="password" value={this.state.password} changeAction={(e) => this.onChangeHandler(e)} />
+                  <span onClick={this.clickShowPassword} className="login__modal-showPassword">Mostrar senha</span>
+                    <button type="button" className="login__modal-loginBtn" onClick={(e) => {this.onSubmit(e)}}>Login</button>
+                    <p className="login__modal-register">Não possui conta? <Link className="linkSignin" to="/signup" onClick={() => this.removeModalBackdrop()}>Cadastre-se</Link></p>
+                </form>
+                
+                {/* <div className="col-12 formLogin">
                   <form className="row" autocomplete="off">
                     <Input type="text" name="email" label="Email" id="email" value={this.state.email} changeAction={(e) => this.onChangeHandler(e)} />
                     <Input type='password' name="password" label='Password' id="password" value={this.state.password} changeAction={(e) => this.onChangeHandler(e)} />
@@ -109,7 +120,7 @@ class Login extends Component{
                     <button type="button" className="btn btn-login d-flex" onClick={(e) => {this.onSubmit(e)}}>Login</button>
                     <span className="col-12 text-center">Não possui conta? <Link className="linkSignin" to="/signup" onClick={() => this.removeModalBackdrop()}>Cadastre-se</Link></span>
                   </form>
-                </div>
+                </div> */}
               </div>
             </div>
         </div>

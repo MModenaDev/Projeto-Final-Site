@@ -1,9 +1,11 @@
 .fluid-input {
   max-width: 450px;
   position: relative;
-  height: 50px;
+  height: 6rem;
   width: 100%;
-  margin: 15px 0;
+  margin: 1.5rem 0 4rem 0;
+  color: #333;
+  font-size: 1.6rem;
 }
 
 .fluid-input .fluid-input-holder {
@@ -39,7 +41,7 @@
   font-size: 1em;
   left: 5%;
   top: 0;
-  color: black;
+  color: #333;
   font-weight: 400;
   text-transform: capitalize;
   pointer-events: none;
