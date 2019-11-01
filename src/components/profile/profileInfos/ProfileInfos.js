@@ -47,7 +47,7 @@ class ProfileInfos extends Component {
         files.forEach((file, i) => {
           formData.append(i, file)
         })
-        fetch(`https://projfinal-dev.herokuapp.com/api/image-upload`, {
+        fetch(`https://wander-ironhack.herokuapp.com/api/image-upload`, {
           method: 'POST',
           body: formData
         })

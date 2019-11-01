@@ -29,7 +29,7 @@ class Home extends Component {
   
   getHouses() {   
     this.setState({isLoading: true}) 
-    Axios.get("https://projfinal-dev.herokuapp.com/api/house/search?city")
+    Axios.get("https://wander-ironhack.herokuapp.com/api/house/search?city")
       .then(response => {
         this.setState({allHouses: response.data, isLoading: false})
         this.adjustTitle()

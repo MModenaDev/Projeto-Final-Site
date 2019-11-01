@@ -85,12 +85,12 @@ class Login extends Component{
                   Faça seu Login
                 </div>
 
-                <a href="https://projfinal-dev.herokuapp.com/api/auth/facebook" className='login__facebook-btn'>
+                <a href="https://wander-ironhack.herokuapp.com/api/auth/facebook" className='login__facebook-btn'>
                   <img className='icos-fac' src="./images/facebookico.png" alt=""/>
                   Facebook
                 </a>
 
-                <a href="https://projfinal-dev.herokuapp.com/api/auth/google"  className='login__google-btn'>
+                <a href="https://wander-ironhack.herokuapp.com/api/auth/google"  className='login__google-btn'>
                   <img className='icos-goo' src="./images/googleico.png" alt=""/>
                   Google
                 </a>

@@ -35,7 +35,7 @@ class Admin extends Component {
     }
 
     componentDidMount() {
-        axios.get("https://projfinal-dev.herokuapp.com/api/house/search?city")
+        axios.get("https://wander-ironhack.herokuapp.com/api/house/search?city")
             .then(response => {
                  this.setState({ homes: response.data })
                 })
@@ -46,7 +46,7 @@ class Admin extends Component {
     }
 
     deleteHouse(elem) {
-      axios.delete(`https://projfinal-dev.herokuapp.com/api/house/${elem._id}`)
+      axios.delete(`https://wander-ironhack.herokuapp.com/api/house/${elem._id}`)
         .then(response => console.log(response))
         .catch(err => console.log(err))
     }

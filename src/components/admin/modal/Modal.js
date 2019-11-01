@@ -38,7 +38,7 @@ class Modal extends Component {
 
     onClickHandler()  {
         if(this.props.modalId === "editHouse") {
-            axios.put(`https://projfinal-dev.herokuapp.com/api/house/${this.state._id}`, this.state)
+            axios.put(`https://wander-ironhack.herokuapp.com/api/house/${this.state._id}`, this.state)
                 .then(this.setState({
                     name: "",
                     maxBooking: "",
@@ -58,7 +58,7 @@ class Modal extends Component {
                 }))
                 .catch(err => console.log(err))
         } else {            
-            axios.post(`https://projfinal-dev.herokuapp.com/api/house/new`, this.state)
+            axios.post(`https://wander-ironhack.herokuapp.com/api/house/new`, this.state)
                 .then(this.setState({
                     name: "",
                     maxBooking: "",
@@ -103,7 +103,7 @@ class Modal extends Component {
         files.forEach((file, i) => {
           formData.append(i, file)
         })
-        fetch(`https://projfinal-dev.herokuapp.com/api/image-upload`, {
+        fetch(`https://wander-ironhack.herokuapp.com/api/image-upload`, {
           method: 'POST',
           body: formData
         })
