@@ -72,10 +72,10 @@ class Login extends Component{
   render(){
     return( 
       <div className="modal fade" id="login" tabIndex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-          <div className="modal-dialog modal-dialog-scrollable" role="document">
+          <div id="login-center" className="modal-dialog modal-dialog-scrollable" role="document">
             <div className="modal-content row">
               <div className="modal-header">
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.removeInfo}>
+                <button id="login__close-btn" type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.removeInfo}>
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>

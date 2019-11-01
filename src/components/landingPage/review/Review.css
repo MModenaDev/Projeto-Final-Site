@@ -6,7 +6,7 @@
   background-color: #fff;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   position: relative;
-  height: 100rem;
+  height: 98rem;
   overflow: hidden;
 }
 
@@ -28,7 +28,7 @@
 
 .landing-page--register-btn {
   background-color: #FB5D30;
-  width: 65rem;
+  width: 60rem;
   padding: 2.6rem 2rem;
   color: white;
   font-weight: 900;
@@ -50,6 +50,10 @@
   transform: translateY(-2px) scale(1.01);
 }
 
+@media screen and (max-width: 1500px) {
+  
+}
+
 @media screen and (max-width: 450px) {
   .reviews {
     padding: 3rem;
@@ -65,17 +69,14 @@
   }
 
   .landing-page--register-btn {
-    background-color: #FB5D30;
     width: 35rem;
     padding: 1.2rem 2rem;
-    color: white;
-    font-weight: 900;
     font-size: 2.8rem;
-    letter-spacing: .5px;
-    border: none;
-    position: absolute;
     bottom: 3.5rem;
+<<<<<<< HEAD
     text-align: center;
     transition: all .5s;
+=======
+>>>>>>> 01622905bc326f0d55ea36790c4f86853e38a843
   }
 }
