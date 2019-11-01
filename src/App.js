@@ -66,17 +66,25 @@ class App extends Component {
       <div className="App">
           <Switch>
             <Route path="/" exact={true} render={(props)  => <LandingPage login={this.state.showLogin} changeLogin={this.changeLogin} getUser={this.getTheUser} {...props} />} />
-            <Route path="/signup" exact={true} component={Signup} />
-            <Route path="/dashboard" exact={true} component={Admin} />
-            <Route path="/profile" exact={true} component={Profile} />
             <Route path="/home" exact={true} component={Home} />
             <Route path="/pricing" exact={true} component={Pricing} />
+            {(this.state.loggedInUser!==null)?(
+            <Route path="/signup" exact={true} render={(props) => <Signup loggedInUser={this.state.loggedInUser} getTheUser={this.getTheUser} {...props} />}/>
+            ):null}
             {(this.state.loggedInUser)?(
               <ProtectedRoute 
                 user={this.state.loggedInUser}
                 exact 
                 path="/dashboard" 
                 component={Admin} 
+              />
+            ):null}
+            {(this.state.loggedInUser)?(
+              <ProtectedRoute 
+                user={this.state.loggedInUser}
+                exact
+                path="/profile" 
+                component={Profile} 
               />
             ):null}
         </Switch>

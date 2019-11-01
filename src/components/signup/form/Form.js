@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PriceCard from '../../priceCard/PriceCard'
 import './Form.css';
 import AuthService from "../../auth/auth-service";
+import Axios from 'axios';
 
 
 class Form extends Component {
@@ -15,7 +16,8 @@ class Form extends Component {
       name: "",
       password: "",
       plan: "",
-      showArrow: false
+      showArrow: false,
+      creationType: true
     }
 
     this.service = new AuthService();
@@ -36,10 +38,20 @@ class Form extends Component {
         translateWidth: window.innerWidth,
       })
     }
+
     if (window.innerWidth < 1200) {
       this.setState({
         showArrow: true,
       })
+    }
+    console.log(this.props)
+    if(this.props.user && !this.props.user.hasOwnProperty("name")){
+      this.setState({
+        email: this.props.user.email,
+        creationType: false 
+      });
+    } else if(this.props.user) {
+      this.props.history.push("/main")
     }
   }
 
@@ -88,16 +100,37 @@ class Form extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const { email, password } = this.state;
+    if(this.state.creationType){
 
-    this.service.signup(email, password)
-      .then(response => {
-        console.log(response)
-        // this.setState({ email: "", password: "", message: "" });
-        // this.props.getUser(response);
-        // this.props.history.push(this.props.location.prevPath);
-      })
-      // .catch(error => this.setState({ message: error.response.data.message }))
+      const { _id } = this.props.user;
+      const { email, password, name, plan } = this.state;
+      console.log(plan)
+  
+      this.service.signup(email, password)
+        .then(response => {
+          Axios.put("http://localhost:5000/api/user/update", { id: _id, name, plan, photoID: [] } )
+            .then(finalUser => {
+              this.setState({ email: "", password: "", message: "" });
+              this.props.getTheUser(finalUser);
+              this.props.history.push("/main");
+            })
+            .catch(error => console.log(error))
+        })
+        .catch(error => console.log(error))
+
+    } else {
+      const { _id } = this.props.user;
+      const { email, name, plan } = this.state;
+
+      Axios.put("http://localhost:5000/api/user/update", { id: _id, email, name, plan,  photoID: [] })
+        .then(finalUser => {
+          this.setState({ email: "", password: "", message: "" });
+          this.props.getTheUser(finalUser);
+          this.props.history.push("/main");
+        })
+        .catch(error => console.log(error))
+    }
+
   }
 
   render() {
@@ -126,13 +159,21 @@ class Form extends Component {
 
             <label htmlFor="password" className="form__label">Senha</label>
             <div className="form__input-container">
+            {(this.state.creationType)?(
               <input type="password" className="form__input" name="password" value={this.state.password} onChange={(e) => this.onChangeHandler(e)} />
+            ):(
+              <input type="password" className="form__input" name="password" value={this.state.password} onChange={(e) => this.onChangeHandler(e)} style={{"backgroundColor": "grey"}} readOnly/>
+            )}
               <img src="/images/locker.svg" alt="locker icon" className="form__icon"/>
             </div>
 
             <label htmlFor="" className="form__label">Repita a senha</label>
             <div className="form__input-container">
+            {(this.state.creationType)?(
               <input type="password" className="form__input form__verifier" onChange={(e) => this.checkPassword(e)} />
+            ):(
+              <input type="password" className="form__input form__verifier" onChange={(e) => this.checkPassword(e)} style={{"backgroundColor": "grey"}} readOnly />
+            )}
               <img src="/images/locker.svg" alt="locker icon" className="form__icon"/>
             </div>
 
@@ -152,9 +193,9 @@ class Form extends Component {
           <div className="form-container2">
             <h3 className="form-price__title">Escolha seu plano</h3>
             <div className="form__card-container">
-              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Básico")}} title="Básico" description="Feito para quem busca simplicidade no seu dia-a-dia." price="599" styleTitle={{color: "#FF8514"}} styleBg={{backgroundColor: "#FF8514"}} showArrow={this.state.showArrow} />
-              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Nômade")}} title="Nômade" description="O melhor plano para quem quer flexibilidade em suas estadias." price="799" styleTitle={{color: "#D65A36"}} styleBg={{backgroundColor: "#D65A36"}} showArrow={this.state.showArrow} />
-              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Explorador")}} title="Explorador" description="Para quem deseja explorar o mundo com muito conforto." price="999" styleTitle={{color: "#BB2A00"}} styleBg={{backgroundColor: "#BB2A00"}} showArrow={this.state.showArrow} />
+              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Basic")}} title="Basic" description="Feito para quem busca simplicidade no seu dia-a-dia." price="599" styleTitle={{color: "#FF8514"}} styleBg={{backgroundColor: "#FF8514"}} showArrow={this.state.showArrow} />
+              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Nomad")}} title="Nomad" description="O melhor plano para quem quer flexibilidade em suas estadias." price="799" styleTitle={{color: "#D65A36"}} styleBg={{backgroundColor: "#D65A36"}} showArrow={this.state.showArrow} />
+              <PriceCard btnClick={(e) => {this.sectionManager(e, 2); this.changePlan("Explorer")}} title="Explorer" description="Para quem deseja explorar o mundo com muito conforto." price="999" styleTitle={{color: "#BB2A00"}} styleBg={{backgroundColor: "#BB2A00"}} showArrow={this.state.showArrow} />
             </div>
 
             <div className="form__circles-container">

@@ -11,7 +11,7 @@ const ProtectedRoute = ({ component: Component, user, ...rest }) => {
         } else {
           return (
             <Redirect
-              to={{ pathname: "/", prevPath: props.location.pathname }}
+              to={{ pathname: "/main", prevPath: props.location.pathname }}
             />
           );
         }

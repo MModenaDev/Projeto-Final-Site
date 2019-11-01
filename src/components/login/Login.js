@@ -53,7 +53,7 @@ class Login extends Component{
       .then(response => {
         this.setState({ email: "", password: "", message: "" });
         this.props.getUser(response);
-        this.props.history.push(this.props.location.prevPath);
+        this.props.history.push("main");
       })
       .catch(error => console.log(error))
 
@@ -83,14 +83,14 @@ class Login extends Component{
                 <div className="col-12">
                   Faça seu Login
                 </div>
-                <div className="col-12 my-2">  
-                  <a href="https://projfinal-dev.herokuapp.com/api/auth/facebook" className='btn btn-face d-flex'>
+                <div className="col-12 my-2">
+                  <a href="http://localhost:5000/api/auth/facebook" className='btn btn-face d-flex'>
                     <img className='icos-fac' src="./images/facebookico.png" alt=""/>
                     <span className='btn-textface'> Facebook</span>
                   </a>
                 </div>
                 <div className="col-12 my-2">
-                  <a href="https://projfinal-dev.herokuapp.com/api/auth/google"  className='btn btn-google d-flex'>
+                  <a href="http://localhost:5000/api/auth/google" className='btn btn-google d-flex'>
                     <img className='icos-goo' src="./images/googleico.png" alt=""/>
                     <span className='btn-textgoog'> Google</span>
                   </a>
@@ -101,7 +101,7 @@ class Login extends Component{
                   </div>
                 </div>
                 <div className="col-12 formLogin">
-                  <form className="row" autocomplete="off">
+                  <form className="row">
                     <Input type="text" name="email" label="Email" id="email" value={this.state.email} changeAction={(e) => this.onChangeHandler(e)} />
                     <Input type='password' name="password" label='Password' id="password" value={this.state.password} changeAction={(e) => this.onChangeHandler(e)} />
                     {(this.state.message)?(<div className="alert alert-danger" role="alert">{ this.state.message }</div>):null}
