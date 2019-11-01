@@ -21,16 +21,16 @@ class CardMobile extends Component {
 
   render() {    
     return (
-      <Link to={`/home-details/${this.props.house._id}`}>
-        <div className="col-10 card-bg p-0 m-0 mt-4" style={this.bgImage()}>
+      
+        <Link to={`/home-details/${this.props.house._id}`} className="col-10 card-bg p-0 m-0 mt-4" style={this.bgImage()}>
           <div className="row">
             <div className="col-12 p-0 card-place flex-column d-flex align-items-bottom">
                 <h4>{this.props.house.name}</h4>
                 <p>{this.props.house.adress}</p>
             </div>
           </div>
-        </div>
-      </Link>
+        </Link>
+      
     )
   }
 }

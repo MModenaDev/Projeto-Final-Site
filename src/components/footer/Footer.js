@@ -6,10 +6,10 @@ import Footerico from './Footerico';
 class Footer extends Component {
   constructor(){
     super()
-    this.house1 = './images/house1.png'
-    this.plane1 = './images/plane1.png'
-    this.backpack1 = './images/backpack1.png'
-    this.profile1 = './images/profile1.png'
+    this.house1 = '/images/house2.png'
+    this.plane1 = '/images/plane2.png'
+    this.backpack1 = '/images/backpack2.png'
+    this.profile1 = '/images/profile2.png'
   }
   
 
@@ -17,9 +17,9 @@ class Footer extends Component {
     return(
       <div className="container-fluid footer d-flex d-md-none fixed-bottom">
         <div className="row d-flex align-items-center justify-content-around">
-          <Footerico link='/homes' name='Home' imgsrc={this.house1}/>
-          <Footerico link='/houses' name='Reservas' imgsrc={this.plane1}/>
-          <Footerico link='/home' name='####' imgsrc={this.backpack1}/>
+          <Footerico link='/main' name='Main' imgsrc={this.house1}/>
+          <Footerico link='/houses' name='##' imgsrc={this.plane1}/>
+          <Footerico link='/home' name='Rooms' imgsrc={this.backpack1}/>
           <Footerico link='/profile' name='Profile' imgsrc={this.profile1}/>
         </div> 
       </div>
