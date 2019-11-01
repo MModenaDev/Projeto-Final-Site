@@ -52,9 +52,9 @@ class PriceCard extends Component {
           <div className="form-card__hr-like"></div>
 
           <div className="form-card__price-container">
-            <p className="form-card__price-container--RS">R$</p>
+            <p className="form-card__price-container--RS">US$</p>
             <p className="form-card__price-container--price">{this.props.price}</p>
-            <p className="form-card__price-container--monthly">por mês</p>
+            <p className="form-card__price-container--monthly">/month</p>
           </div>
             <div className="form-card__benefits-container">
               <img src="/images/world.svg" alt="world" className="form-card__benefits-container--img"/>
@@ -63,7 +63,7 @@ class PriceCard extends Component {
             
             <div className="form-card__benefits-container">
               <img src="/images/airplane.svg" alt="airplane" className="form-card__benefits-container--img"/>
-              <p className="form-card__benefits-container--text">{this.props.benefit2}.</p>   
+              <p className="form-card__benefits-container--text">{this.props.benefit2}</p>   
             </div>
   
             <div className="form-card__benefits-container">
@@ -71,9 +71,9 @@ class PriceCard extends Component {
               <p className="form-card__benefits-container--text">{this.props.benefit3}</p>
             </div>
             {(window.location.pathname === "/pricing")?(
-              <button className="form-card__btn" plan={this.props.title} onClick={(e) => this.clickHandler(e)} style={this.props.styleBg}>Quero esse plano!</button>
+              <button className="form-card__btn" plan={this.props.title} onClick={(e) => this.clickHandler(e)} style={this.props.styleBg}>I want this plan!</button>
             ):(
-              <button className="form-card__btn" plan={this.props.title} onClick={this.props.btnClick} style={this.props.styleBg}>Quero esse plano!</button>
+              <button className="form-card__btn" plan={this.props.title} onClick={this.props.btnClick} style={this.props.styleBg}>I want this plan!</button>
             )}
         </div>):null}
       </div>

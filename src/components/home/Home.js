@@ -113,12 +113,12 @@ class Home extends Component {
             </div>
             <div className="col-12 home-inf d-flex align-items-center">
               <button className="btn btn-filter d-flex justify-content-center align-items-center">
-                <p>Período</p>
+                <p>Period</p>
                 {/* <img src="/images/angle-arrow-down.png" alt=""/> */}
               </button>
             </div>
             <div className="col-12 d-flex justify-content-center apts">
-              <h3>Apartamentos Disponíveis</h3>
+              <h3>Apartments</h3>
             </div>
           </div>
 
@@ -134,7 +134,7 @@ class Home extends Component {
           </div>
           <div className="row d-none d-md-flex places-row-desk justify-content-center ">
             <div className="col-12 text-center fixed-top-city p-0">
-              <h1>Apartamentos Disponíveis em: {this.state.city}</h1>
+              <h1>Apartments in: {this.state.city}</h1>
             </div>
             {this.showCardsDesk()}
 

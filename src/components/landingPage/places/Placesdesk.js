@@ -10,8 +10,8 @@ class Placesdesk extends Component {
   render() {
     return (
         <div data-aos="zoom-in-right" className="container-fluid placesdesk d-none d-md-flex">
-            <h1 className="placedesk__title">Regiões</h1>
-            <p className="placedesk__description">Conheça os lugares que possuimos nossas instalações e escolha a melhor para você</p>
+            <h1 className="placedesk__title">Regions</h1>
+            <p className="placedesk__description">Know the places we own our facilities and choose the best one for you</p>
             <div className="col-12">
               <div className="row d-flex justify-content-center mt-4">
                 <Link className="col-3 homecitydesk d-flex align-items-center justify-content-center" to="/home/Bangkok">

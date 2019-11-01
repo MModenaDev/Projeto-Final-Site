@@ -12,6 +12,36 @@
 
 .right-side {
   margin-top: 10rem;
+  overflow-y: scroll;
+  max-height: 100%;
+  padding-bottom: 10rem;
+}
+
+.booking_titles {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.booking_inputs {
+  width: 20rem;
+  height: 4rem;
+  font-size: 2rem;
+}
+
+.btn-search-booking {
+  color: #FFFFFF;
+  background-color: #D56210;
+  width: 20rem;
+  margin-top: 2rem;
+  height: 4rem;
+  font-size: 2rem;
+  margin-bottom: 10rem;
+}
+
+.btn-search-booking:hover {
+  color: #D56210;
+  background-color: #FFFFFF;
+  border: 2px solid #D56210;
 }
 
 .book-room {
@@ -152,3 +182,4 @@
     top: 50%;
   }
 }
+
