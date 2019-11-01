@@ -14,6 +14,7 @@ import 'aos/dist/aos.css';
 import Profile from './components/profile/Profile';
 import Pricing from './components/pricing/Pricing';
 import Ourcities from './components/ourcities/Ourcities'
+import Booking from './components/booking/Booking'
 import "./App.css";
 
 AOS.init();
@@ -78,6 +79,7 @@ class App extends Component {
             <Route path="/main" exact={true} component={Main} />
             <Route exact path="/home/:city" component={Home} />
             <Route exact path="/home-details/:id" component={Houses} />
+            <Route exact path="/home-details/:id/booking" component={Booking} />
             <Route path="/pricing" exact={true} render={(props)  => <Pricing  user={this.state.loggedInUser} getUser={this.getTheUser} {...props} />} />
             {(this.state.loggedInUser!==null)?(
             <Route path="/signup" exact={true} render={(props) => <Signup loggedInUser={this.state.loggedInUser} getTheUser={this.getTheUser} {...props} />}/>
