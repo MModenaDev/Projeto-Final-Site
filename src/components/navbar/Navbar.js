@@ -26,7 +26,6 @@ class Navbar extends Component {
 }
 
   componentDidMount() {
-    console.log('mounted')
     this.changeState()
   }
 

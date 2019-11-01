@@ -1,6 +1,6 @@
 .review-card {
   width: 40rem;
-  margin: 0 3rem;
+  margin: 3rem auto 3rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,14 +33,14 @@
 @media screen and (max-width: 1500px) {
   .review-card {
     width: 38rem;
-    margin: 0 2rem;
+    margin: 3rem auto 3rem auto;
   }
 }
 
 @media screen and (max-width: 768px) {
   .review-card {
     width: 33rem;
-    margin: 0 2rem;
+    margin: 3rem auto 3rem auto;
     height: 55rem;
     padding-bottom: 4rem;
   }
@@ -62,7 +62,7 @@
 @media screen and (max-width: 450px) {
   .review-card {
     width: 26rem;
-    margin: 0 1.5rem;
+    margin: 3rem auto 3rem auto;
     height: 40rem;
   }
 
