@@ -3,7 +3,7 @@ import axios from 'axios';
 class AuthService {
     constructor() {
         this.service = axios.create({
-            baseURL: "https://wander-ironhack.herokuapp.com",
+            baseURL: process.env.REACT_APP_API_URL,
             withCredentials: true
         });
     }

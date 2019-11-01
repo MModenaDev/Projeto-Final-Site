@@ -27,7 +27,7 @@ class PriceCard extends Component {
     e.preventDefault()
     if(this.props.user){
       const { _id } = this.props.user
-      axios.put("http://localhost:5000/api/user/update", { id: _id, plan: this.props.title } )
+      axios.put(`${process.env.REACT_APP_API_URL}/user/update`, { id: _id, plan: this.props.title } )
             .then(response => {
               this.props.getUser(response.data);
               this.props.history.push("profile");

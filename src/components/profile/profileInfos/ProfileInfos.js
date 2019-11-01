@@ -29,7 +29,7 @@ class ProfileInfos extends Component {
     e.preventDefault()
     const { name, email, photoID } = this.state;
     const { _id } = this.props.user;
-    axios.put("http://localhost:5000/api/user/update", { id: _id, name, email, photoID } )
+    axios.put(`${process.env.REACT_APP_API_URL}/user/update`, { id: _id, name, email, photoID } )
       .then(response => {
         this.setState({ name: response.data.name, email: response.data.email, photoID: response.data.photoID });
         this.props.getUser(response.data);
@@ -47,7 +47,7 @@ class ProfileInfos extends Component {
         files.forEach((file, i) => {
           formData.append(i, file)
         })
-        fetch(`https://wander-ironhack.herokuapp.com/api/image-upload`, {
+        fetch(`${process.env.REACT_APP_API_URL}/user/update`, {
           method: 'POST',
           body: formData
         })

@@ -35,7 +35,7 @@ class Houses extends Component {
 
   getHouse() {
     this.setState({isLoading: true})
-    Axios.get(`https://wander-ironhack.herokuapp.com/api/house/${this.id}`)
+    Axios.get(`${process.env.REACT_APP_API_URL}/house/${this.id}`)
       .then(response => {
         this.setState({house: response.data, isLoading: false}, () => this.bgImage())
       })

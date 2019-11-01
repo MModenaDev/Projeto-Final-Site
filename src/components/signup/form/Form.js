@@ -107,7 +107,7 @@ class Form extends Component {
       this.service.signup(email, password)
         .then(response => {
           console.log(response)
-          Axios.put("http://localhost:5000/api/user/update", { id: response._id, name, plan, photoID: [] } )
+          Axios.put(`${process.env.REACT_APP_API_URL}/user/update`, { id: response._id, name, plan, photoID: [] } )
             .then(finalUser => {
               this.setState({ email: "", password: "", message: "" });
               this.props.getTheUser(finalUser);
@@ -123,7 +123,7 @@ class Form extends Component {
       console.log(_id);
 
 
-      Axios.put("http://localhost:5000/api/user/update", { id: _id, email, name, plan,  photoID: [] })
+      Axios.put(`${process.env.REACT_APP_API_URL}/user/update`, { id: _id, email, name, plan,  photoID: [] })
         .then(finalUser => {
           this.setState({ email: "", password: "", message: "" });
           this.props.getTheUser(finalUser);
