@@ -67,7 +67,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact={true} render={(props)  => <LandingPage login={this.state.showLogin} changeLogin={this.changeLogin} getUser={this.getTheUser} {...props} />} />
             <Route path="/home" exact={true} component={Home} />
-            <Route path="/pricing" exact={true} component={Pricing} />
+            <Route path="/pricing" exact={true} render={(props)  => <Pricing  user={this.state.loggedInUser} getUser={this.getTheUser} {...props} />} />
             {(this.state.loggedInUser!==null)?(
             <Route path="/signup" exact={true} render={(props) => <Signup loggedInUser={this.state.loggedInUser} getTheUser={this.getTheUser} {...props} />}/>
             ):null}
@@ -81,6 +81,7 @@ class App extends Component {
             ):null}
             {(this.state.loggedInUser)?(
               <ProtectedRoute 
+                getUser={this.getTheUser}
                 user={this.state.loggedInUser}
                 exact
                 path="/profile" 

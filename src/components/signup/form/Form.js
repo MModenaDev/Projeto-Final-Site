@@ -102,13 +102,12 @@ class Form extends Component {
 
     if(this.state.creationType){
 
-      const { _id } = this.props.user;
       const { email, password, name, plan } = this.state;
-      console.log(plan)
   
       this.service.signup(email, password)
         .then(response => {
-          Axios.put("http://localhost:5000/api/user/update", { id: _id, name, plan, photoID: [] } )
+          console.log(response)
+          Axios.put("http://localhost:5000/api/user/update", { id: response._id, name, plan, photoID: [] } )
             .then(finalUser => {
               this.setState({ email: "", password: "", message: "" });
               this.props.getTheUser(finalUser);
@@ -121,6 +120,8 @@ class Form extends Component {
     } else {
       const { _id } = this.props.user;
       const { email, name, plan } = this.state;
+      console.log(_id);
+
 
       Axios.put("http://localhost:5000/api/user/update", { id: _id, email, name, plan,  photoID: [] })
         .then(finalUser => {

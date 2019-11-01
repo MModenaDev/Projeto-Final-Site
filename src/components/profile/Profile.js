@@ -47,17 +47,17 @@ class Profile extends Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log("profile", this.props);
     
     return (
       <Fragment >
         <NavbarLog />
         <div className="profile">
-          <ProfileBanner role={this.props.loggedInUser.plan} name={this.props.loggedInUser.name} photoID={this.props.loggedInUser.photoID} />
+          <ProfileBanner plan={this.props.loggedInUser.plan} name={this.props.loggedInUser.name} photoID={this.props.loggedInUser.photoID} />
           <div className="profile-content">
-            <MobileBtns showInfos={this.showInfos} showBookings={this.showBookings} role={this.props.loggedInUser.plan}/>
-            {(this.state.infos)?(<ProfileInfos user={this.props.loggedInUser} />):null}
-            {(this.state.bookings)?(<ProfileBookings userId={this.props.loggedInUser._id} />):null}
+            <MobileBtns showInfos={this.showInfos} showBookings={this.showBookings} plan={this.props.loggedInUser.plan}/>
+            {(this.state.infos)?(<ProfileInfos user={this.props.loggedInUser} getUser={this.props.getUser}/>):null}
+            {(this.state.bookings)?(<ProfileBookings user={this.props.loggedInUser} />):null}
           </div>
         </div>
         <Footer />

@@ -4,7 +4,7 @@ import NavbarLog from '../navbar/NavbarLog';
 import Footer from '../footer/Footer';
 import './Pricing.css';
 
-function Pricing() {
+const Pricing = (props) => {
   return (
     <Fragment>
       <NavbarLog />
@@ -14,9 +14,9 @@ function Pricing() {
             <div className="pricing-card__container">
               <h3 className="form-price__title">Escolha seu plano</h3>
               <div className="form__card-container">
-                <PriceCard title="Básico" description="Feito para quem busca simplicidade no seu dia-a-dia." price="599" styleTitle={{color: "#FF8514"}} styleBg={{backgroundColor: "#FF8514"}}/>
-                <PriceCard title="Nômade" description="O melhor plano para quem quer flexibilidade em suas estadias." price="799" styleTitle={{color: "#D65A36"}} styleBg={{backgroundColor: "#D65A36"}}/>
-                <PriceCard title="Explorador" description="Para quem deseja explorar o mundo com muito conforto." price="999" styleTitle={{color: "#BB2A00"}} styleBg={{backgroundColor: "#BB2A00"}}/>
+                <PriceCard title="Basic" description="Feito para quem busca simplicidade no seu dia-a-dia." price="599" styleTitle={{color: "#FF8514"}} user={props.user} getUser={props.getUser} {...props} styleBg={{backgroundColor: "#FF8514"}}/>
+                <PriceCard title="Nomad" description="O melhor plano para quem quer flexibilidade em suas estadias." price="799" styleTitle={{color: "#D65A36"}} user={props.user} getUser={props.getUser} {...props} styleBg={{backgroundColor: "#D65A36"}}/>
+                <PriceCard title="Explorer" description="Para quem deseja explorar o mundo com muito conforto." price="999" styleTitle={{color: "#BB2A00"}} user={props.user} getUser={props.getUser} {...props} styleBg={{backgroundColor: "#BB2A00"}}/>
               </div>
             </div>
           </div>

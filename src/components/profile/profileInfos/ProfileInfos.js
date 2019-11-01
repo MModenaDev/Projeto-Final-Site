@@ -10,7 +10,12 @@ class ProfileInfos extends Component {
     this.state = {
       name: this.props.user.name,
       email: this.props.user.email,
-      photoID: this.props.user.photoID
+      photoID: this.props.user.photoID,
+      planColors: {
+        "Basic":"#FF8514",
+        "Nomad": "#D65A36",
+        "Explorer": "#BB2A00"
+      }
     }
   }
 
@@ -23,10 +28,11 @@ class ProfileInfos extends Component {
   onSubmit(e) {
     e.preventDefault()
     const { name, email, photoID } = this.state;
-    axios.put("", { name, email, photoID } )
+    const { _id } = this.props.user;
+    axios.put("http://localhost:5000/api/user/update", { id: _id, name, email, photoID } )
       .then(response => {
-        this.setState({ name: response.name, email: response.email, photoID: response.photoID });
-        this.props.getUser(response);
+        this.setState({ name: response.data.name, email: response.data.email, photoID: response.data.photoID });
+        this.props.getUser(response.data);
         this.props.history.push("profile");
       })
       .catch(error => console.log(error))
@@ -64,8 +70,8 @@ class ProfileInfos extends Component {
         <label htmlFor="" className="profile-label">Choose a profile picture</label>
         <input type="file" className="profile-input" onChange={(e) => this.onChangePicture(e)}/>
         <div className="profile-content__btn-container">
-          <button className="profile-content__btn-container--btn" style={{backgroundColor: "#BB2A00"}} onClick={(e) => this.onSubmit(e)} >Atualizar</button>
-          <Link className="profile-content__btn-container--btn" style={{backgroundColor: "#BB2A00", textDecoration: "none", color: "#f1f1f1"}} to="/pricing">Alterar plano</Link>
+          <button className="profile-content__btn-container--btn" style={{backgroundColor: this.state.planColors[this.props.user.plan]}} onClick={(e) => this.onSubmit(e)} >Atualizar</button>
+          <Link className="profile-content__btn-container--btn" style={{backgroundColor: this.state.planColors[this.props.user.plan], textDecoration: "none", color: "#f1f1f1"}} to="/pricing">Alterar plano</Link>
         </div>
       </div>
     )

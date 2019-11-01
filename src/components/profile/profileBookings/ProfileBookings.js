@@ -7,7 +7,12 @@ class ProfileBookings extends Component {
 
     this.state = {
       next: true,
-      past: false
+      past: false,
+      planColors: {
+        "Basic":"#FF8514",
+        "Nomad": "#D65A36",
+        "Explorer": "#BB2A00"
+      }
     };
   }
 
@@ -45,20 +50,17 @@ class ProfileBookings extends Component {
           </div>
 
           <div className="profile-booking__btns-container">
-            <button className="profile-booking__btns-container--btns1" style={{backgroundColor: "#BB2A00"}} onClick={() => this.showNext()}>
+            <button className="profile-booking__btns-container--btns1" style={{backgroundColor: this.state.planColors[this.props.user.plan]}} onClick={() => this.showNext()}>
               Próximos
             </button>
-            <button className="profile-booking__btns-container--btns2" style={{backgroundColor: "#BB2A00"}} onClick={() => this.showPast()}>
+            <button className="profile-booking__btns-container--btns2" style={{backgroundColor: this.state.planColors[this.props.user.plan]}} onClick={() => this.showPast()}>
               Anteriores
             </button>
           </div>
           
           
 
-          <div className="booking-container__scroll myRow">
-            {(this.state.next)?(<h1>next</h1>):null}
-            {(this.state.past)?(<h1>past</h1>):null}
-
+          <div className="booking-container__scroll myRow" style={{borderColor: this.state.planColors[this.props.user.plan]}}>
             <div className="myRow d-flex justify-content-center">
               <div className="col-10 card-bg-desk p-0 m-0 mt-4">
                 <div className="row d-flex justify-content-center">
