@@ -21,7 +21,7 @@ class Signup extends Component {
         </div>
         <div className="signup__rightSide">
           <div className="signup__rightSide-filter">
-            <Form />
+            <Form user={this.props.loggedInUser} {...this.props}/>
           </div>
         </div>
       </div>

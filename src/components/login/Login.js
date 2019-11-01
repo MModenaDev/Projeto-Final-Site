@@ -54,7 +54,7 @@ class Login extends Component{
       .then(response => {
         this.setState({ email: "", password: "", message: "" });
         this.props.getUser(response);
-        this.props.history.push(this.props.location.prevPath);
+        this.props.history.push("main");
       })
       .catch(error => console.log(error))
 
