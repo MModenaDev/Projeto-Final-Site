@@ -5,6 +5,8 @@ import NavbarLog from '../navbar/NavbarLog';
 import Axios from 'axios';
 import Loader from 'react-loader-spinner'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import { Link } from 'react-router-dom'
+
 
 class Houses extends Component {
   constructor(props){
@@ -62,10 +64,11 @@ class Houses extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-12 d-flex justify-content-center book-room align-items-center">
-                  <span>RESERVAR QUARTO</span>
-
-                </div>
+                <Link to={`/home-details/${this.state.house._id}/booking`}>
+                  <div className="col-12 d-flex justify-content-center book-room align-items-center">
+                    <span>RESERVAR QUARTO</span>
+                  </div>
+                </Link>
               </div>
 
             </div>

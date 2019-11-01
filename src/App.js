@@ -13,6 +13,7 @@ import 'aos/dist/aos.css';
 import Profile from './components/profile/Profile';
 import Pricing from './components/pricing/Pricing';
 import Ourcities from './components/ourcities/Ourcities'
+import Booking from './components/booking/Booking'
 import "./App.css";
 
 AOS.init();
@@ -78,6 +79,7 @@ class App extends Component {
             <Route path="/ourcities" exact={true} component={Ourcities} />
             <Route exact path="/home/:city" component={Home} />
             <Route exact path="/home-details/:id" component={Houses} />
+            <Route exact path="/home-details/:id/booking" component={Booking} />
             {(this.state.loggedInUser)?(
               <ProtectedRoute 
                 user={this.state.loggedInUser}
