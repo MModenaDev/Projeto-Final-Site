@@ -39,7 +39,7 @@ class Review extends Component {
     return (
       
       <div className="reviews">
-        <h2 className="reviews__title">AVALIAÇÕES</h2>
+        <h2 className="reviews__title">REVIEWS</h2>
 
         <div className="reviews__slide-container">
           <Slider {...settings}>

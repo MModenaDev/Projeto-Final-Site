@@ -31,29 +31,29 @@ class Howto extends Component {
       <div data-aos={this.state.showAos?"fade-right":null}  className="howto-container">
       
       {/* <div data-aos="fade-right" className="howto-container"> */}
-        <h2 className="howto__title">Como usar o Wander</h2>
-        <p className="howto__description">Queremos proporcionar ao nosso usuário uma experiência única, desde o agendamento até a hospedagem</p>
+        <h2 className="howto__title">How to use</h2>
+        <p className="howto__description">We want to provide our users with a unique experience from scheduling to hosting.</p>
         <div className="howto__card-container">
 
           <div className="howto__card-container--card">
             {/* <img className="howto__card-container--card-img" src="./images/backpack.svg" alt="drawing of a backpack" /> */}
             <p className="howto__card-container--card-text">
             <img className="howto__card-container--card-img howto__img-fix1" src="./images/backpack.svg" alt="drawing of a backpack" />
-              Faça suas malas
+              Pack your bags
             </p>
           </div>
           <div className="howto__card-container--card">
             {/* <img className="howto__card-container--card-img" src="./images/airplane.svg" alt="drawing of an airplane flying" /> */}
             <p className="howto__card-container--card-text">
             <img className="howto__card-container--card-img" src="./images/airplane.svg" alt="drawing of an airplane flying" />
-              Escolha um local ao redor do mundo
+              Choose a place around the world
             </p>
           </div>
           <div className="howto__card-container--card">
             {/* <img className="howto__card-container--card-img" src="./images/world.svg" alt="drawing of planet earth" /> */}
             <p className="howto__card-container--card-text">
             <img className="howto__card-container--card-img howto__img-fix3" src="./images/world.svg" alt="drawing of planet earth" />
-              Viva novas experiências
+              Enjoy new experiences
             </p>
           </div>
 
