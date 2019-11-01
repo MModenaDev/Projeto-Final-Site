@@ -8,19 +8,22 @@
 .profile-photo {
   position: absolute;
   width: 28rem;
+  height: 28rem;
   border-radius: 50%;
   border: 12px solid #BB2A00;
   bottom: 15%;
-  left: 4rem;
+  left: 6rem;
   transform: translateY(50%);
+  background-color:white;
+  padding:10px;
 }
 
 .profile-name {
-  font-size: 8rem;
+  font-size: 6rem;
   color: #f1f1f1;
   position: absolute;
   bottom: calc(15% + 1rem);
-  left: calc(4rem + 28rem + 3rem);
+  left: calc(4rem + 28rem + 5rem);
   transform: translateY(50%);
 }
 
@@ -41,6 +44,7 @@
 
   .profile-photo {
     width: 24rem;
+    height: 24rem;
   }
 
   .profile-name {
@@ -64,6 +68,7 @@
   .profile-photo {
     border: 3px solid #BB2A00;
     width: 15rem;
+    height: 15rem;
     left: 50%;
     transform: translate(-50%, 50%);
     z-index: 1;

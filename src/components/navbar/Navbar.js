@@ -11,8 +11,8 @@ class Navbar extends Component {
 
   constructor(props){
     super(props)
-    this.imgdesk = Logowhite1
-    this.imgmob = Logowhite
+    this.imgdesk = Logoorange1
+    this.imgmob = Logoorange
     this.state = {
       arrowAction : true,
       isTop : true,
@@ -26,7 +26,6 @@ class Navbar extends Component {
 }
 
   componentDidMount() {
-    console.log('mounted')
     this.changeState()
   }
 
@@ -56,8 +55,6 @@ class Navbar extends Component {
     this.nav = document.getElementById("nav")
     if (this.nav){
       if(!this.state.isTop){
-        this.imgdesk = Logoorange1
-        this.imgmob = Logoorange
         console.log('transparente')
         this.nav.classList.add('navbar-scrolled')
       } else {this.nav.classList.remove('navbar-scrolled')

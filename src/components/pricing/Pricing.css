@@ -4,10 +4,14 @@
   background-image: url('/images/bg2.jpg');
   background-size: cover;
   background-position: 50% 50%;
-  overflow-y: scroll;
   display: flex;
   justify-content: center;
+  overflow: hidden;
   padding-top: 4rem;
+}
+
+.pricing__fix-width {
+  width: 110rem;
 }
 
 .pricing-filter {
@@ -42,7 +46,21 @@
   transform: translate(-50%, -50%);
 }
 
+@media screen and (max-width: 1500px) {
+  .pricing__fix-width {
+    width: 90rem;
+  }
+}
+
 @media screen and (max-width: 450px) {
+  .pricing {
+    overflow-y: scroll;
+  }
+
+  .pricing__fix-width {
+    width: 30rem;
+  }
+
   .pricing-container2 {
     width: 30rem;
     top: 8rem;

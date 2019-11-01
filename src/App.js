@@ -8,6 +8,7 @@ import Home from "./components/home/Home"
 import LandingPage from "./components/landingPage/LandingPage";
 import Signup from "./components/signup/Signup";
 import Houses from './components/houses/Houses'
+import Main from './components/main/Main'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import Profile from './components/profile/Profile';
@@ -72,20 +73,32 @@ class App extends Component {
           <Switch>
             <Route path="/houses" exact={true} component={Houses} />
             <Route path="/" exact={true} render={(props)  => <LandingPage login={this.state.showLogin} changeLogin={this.changeLogin} getUser={this.getTheUser} {...props} />} />
-            <Route path="/signup" exact={true} component={Signup} />
             <Route path="/about" exact={true} component={About} />
             <Route path="/profile" exact={true} component={Profile} />
-            <Route path="/pricing" exact={true} component={Pricing} />
             <Route path="/ourcities" exact={true} component={Ourcities} />
+            <Route path="/main" exact={true} component={Main} />
             <Route exact path="/home/:city" component={Home} />
             <Route exact path="/home-details/:id" component={Houses} />
             <Route exact path="/home-details/:id/booking" component={Booking} />
+            <Route path="/pricing" exact={true} render={(props)  => <Pricing  user={this.state.loggedInUser} getUser={this.getTheUser} {...props} />} />
+            {(this.state.loggedInUser!==null)?(
+            <Route path="/signup" exact={true} render={(props) => <Signup loggedInUser={this.state.loggedInUser} getTheUser={this.getTheUser} {...props} />}/>
+            ):null}
             {(this.state.loggedInUser)?(
               <ProtectedRoute 
                 user={this.state.loggedInUser}
                 exact 
                 path="/dashboard" 
                 component={Admin} 
+              />
+            ):null}
+            {(this.state.loggedInUser)?(
+              <ProtectedRoute 
+                getUser={this.getTheUser}
+                user={this.state.loggedInUser}
+                exact
+                path="/profile" 
+                component={Profile} 
               />
             ):null}
         </Switch>

@@ -88,7 +88,7 @@
 .form__input {
   width: 100%;
   font-size: 2rem;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 8rem 1.5rem 2rem;
   border: 1px solid #888;
   border-radius: 5px;
   outline: none;
@@ -255,7 +255,7 @@
 
   .form__input {
     font-size: 1.4rem;
-    padding: 1.2rem 1.5rem;
+    padding: 1.2rem 6rem 1.2rem 1.5rem;
   }
 
   .form__icon {

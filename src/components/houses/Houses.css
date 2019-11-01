@@ -14,8 +14,9 @@
   height: 15vh;
   background: linear-gradient(180deg, #FF8514 0%, #D56210 100%);
   font-style: normal;
-  font-weight: bold;
-  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 3.5rem;
   line-height: 42px;
   color: #FFFFFF;
 }
@@ -62,4 +63,57 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+}
+
+.house__side-images {
+  position: absolute;
+  top: 50%;
+  right: 3rem;
+  transform: translatey(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.house__side-images--img {
+  margin-bottom: 2rem;
+  width: 11rem;
+  height: 11rem;
+  transition: all .3s;
+}
+
+.house__side-images--img-active {
+  transform: scale(1.15);
+  border: 3px solid white;
+}
+
+.house__side-images--img:hover {
+  transform: scale(1.15);
+}
+
+@media screen and (max-width: 1500px) {
+  .book-room {
+    font-size: 3rem;
+  }
+
+  .house__side-images--img {
+    margin-bottom: 1.5rem;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .house__side-images {
+    top: 55%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .book-room {
+    font-size: 2.6rem;
+  }
+
+  .house__side-images {
+    right: 1.5rem;
+    top: 50%;
+  }
 }

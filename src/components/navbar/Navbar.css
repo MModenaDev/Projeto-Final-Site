@@ -8,7 +8,8 @@
 }
 
 .logo-sizedesk {
-  width: 75%;
+  /* width: 75%; */
+  height: 6rem;
 }
 
 .logo-sizemob {
@@ -16,7 +17,10 @@
 }
 
 .navbar a {
+  font-weight: 900;
   color: white;
+  letter-spacing: .1px;
+  font-size: 2.4rem
 }
 
 .navbar-scrolled{
