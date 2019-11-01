@@ -113,7 +113,7 @@ class Home extends Component {
             </div>
             <div className="col-12 home-inf d-flex align-items-center">
               <button className="btn btn-filter d-flex justify-content-center align-items-center">
-                <p>Período</p>
+                <p>Period</p>
                 {/* <img src="/images/angle-arrow-down.png" alt=""/> */}
               </button>
             </div>

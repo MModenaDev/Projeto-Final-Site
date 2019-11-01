@@ -63,7 +63,7 @@ class PriceCard extends Component {
             
             <div className="form-card__benefits-container">
               <img src="/images/airplane.svg" alt="airplane" className="form-card__benefits-container--img"/>
-              <p className="form-card__benefits-container--text">{this.props.benefit2}.</p>   
+              <p className="form-card__benefits-container--text">{this.props.benefit2}</p>   
             </div>
   
             <div className="form-card__benefits-container">

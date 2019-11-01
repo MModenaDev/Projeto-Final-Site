@@ -65,7 +65,7 @@ class ProfileInfos extends Component {
       <div className="profile-content__infos">
         <label htmlFor="email" className="profile-label">Email</label>
         <input type="text" name="email" className="profile-input" value={this.state.email} onChange={(e) => this.onChangeHandler(e)} />
-        <label htmlFor="name" className="profile-label">Nome</label>
+        <label htmlFor="name" className="profile-label">Name</label>
         <input type="text" name="name" className="profile-input" value={this.state.name} onChange={(e) => this.onChangeHandler(e)}/>
         <label htmlFor="" className="profile-label">Choose a profile picture</label>
         <input type="file" className="profile-input" onChange={(e) => this.onChangePicture(e)}/>

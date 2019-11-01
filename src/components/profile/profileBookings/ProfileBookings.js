@@ -51,10 +51,10 @@ class ProfileBookings extends Component {
 
           <div className="profile-booking__btns-container">
             <button className="profile-booking__btns-container--btns1" style={{backgroundColor: this.state.planColors[this.props.user.plan]}} onClick={() => this.showNext()}>
-              Próximos
+              Next
             </button>
             <button className="profile-booking__btns-container--btns2" style={{backgroundColor: this.state.planColors[this.props.user.plan]}} onClick={() => this.showPast()}>
-              Anteriores
+              Previous
             </button>
           </div>
           

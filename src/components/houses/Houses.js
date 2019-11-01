@@ -194,24 +194,27 @@ class Houses extends Component {
                     </div>
                   </div>
                 </div>
-                <Link to={`/profile`}>
-                  <div className="col-12 d-flex justify-content-center book-room align-items-center">
+                
+                  <Link to={`/profile`} className="col-12 d-flex justify-content-center book-room align-items-center">
                     <span onClick={(e) => this.updateBooking(e)}>RESERVAR QUARTO</span>
-                  </div>
-                </Link>
+                  </Link>
               </div>
 
             </div>
-            <div className="col-6 right-side">
-              <div>
-                <label for="dateStart">Date Start:</label>
-                <input type="date" name="dateStartInput" placeholder="YYYY/MM/DD" value={this.state.dateStart} onChange={(e) => this.onChangeHandler(e)}/>
-                <label for="dateFinish">Date Finish:</label>
-                <input type="date" name="dateFinishInput" placeholder="YYYY/MM/DD" value={this.state.dateFinish} onChange={(e) => this.onChangeHandler(e)}/>
-                <button onClick={(e) => this.getBookings(e)}>Search</button>
-              </div>
-              <div className="booking-container">
-                {this.showBookings()}
+            <div className="col-12 col-md-6 right-side">
+              <div className="row d-flex justify-content-center">
+                <div className="col-6 flex-column text-center">
+                  <label className="booking_titles mr-3" for="dateStart">Date Start:</label>
+                  <input className="booking_inputs" type="date" name="dateStartInput" placeholder="YYYY/MM/DD" value={this.state.dateStart} onChange={(e) => this.onChangeHandler(e)}/>
+                
+                  <label className="booking_titles mr-3" for="dateFinish">Date Finish:</label>
+                  <input className="booking_inputs" type="date" name="dateFinishInput" placeholder="YYYY/MM/DD" value={this.state.dateFinish} onChange={(e) => this.onChangeHandler(e)}/>
+                  <button className="btn btn-search-booking" onClick={(e) => this.getBookings(e)}>Search</button>
+                </div>
+                
+                <div className="booking-container">
+                  {this.showBookings()}
+                </div>
               </div>
             </div>
           </div>

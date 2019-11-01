@@ -14,7 +14,10 @@ class About extends Component {
             <img className="img-about" src={LogoAbout} alt=""/>
           </div>
           <div className="col-10 col-md-4 about-div d-flex align-items-center">
-            <span className="about-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil perferendis, veniam fuga exercitationem ut consequatur aliquid aperiam voluptas possimus tempore autem, accusamus vel, ratione laboriosam nobis placeat nesciunt deserunt. Cum incidunt quas atque, dicta ab deleniti voluptatibus quaerat nemo quam?</span>
+            <span className="about-text">
+              We believe that everyone should be able to live and work wherever they want insted of being rooted to something, as long as they can afford it.<br/><br/>
+              So we came up with the idea of ​​creating a worldwide housing system to make this possible.<br/><br/>
+              The current version of the website is an MVP and has a single purpose to show how we want to arrive in the future.</span>
           </div>
         </div>
       </div>
