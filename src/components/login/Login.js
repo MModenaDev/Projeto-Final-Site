@@ -54,7 +54,7 @@ class Login extends Component{
       .then(response => {
         this.setState({ email: "", password: "", message: "" });
         this.props.getUser(response);
-        this.props.history.push(this.props.location.prevPath);
+        this.props.history.push("main");
       })
       .catch(error => console.log(error))
 
@@ -85,15 +85,15 @@ class Login extends Component{
                   Faça seu Login
                 </div>
 
-                <Link to="https://projfinal-dev.herokuapp.com/api/auth/facebook" className='login__facebook-btn' onClick={() => this.removeModalBackdrop()}>
+                <a href="https://projfinal-dev.herokuapp.com/api/auth/facebook" className='login__facebook-btn'>
                   <img className='icos-fac' src="./images/facebookico.png" alt=""/>
                   Facebook
-                </Link>
+                </a>
 
-                <Link to="https://projfinal-dev.herokuapp.com/api/auth/google"  className='login__google-btn' onClick={() => this.removeModalBackdrop()}>
+                <a href="https://projfinal-dev.herokuapp.com/api/auth/google"  className='login__google-btn'>
                   <img className='icos-goo' src="./images/googleico.png" alt=""/>
                   Google
-                </Link>
+                </a>
                 
                 <div className="login-form__or">
                   <div className="login-form__or-line"></div>

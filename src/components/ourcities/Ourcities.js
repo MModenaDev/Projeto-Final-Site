@@ -39,17 +39,17 @@ class Ourcities extends Component {
               <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4" to="/home/SaoPaulo">
                 <Homecitydesk title='São Paulo' videosrc='./videos/spmovie2.mp4' />
               </Link>
-              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4" to="/home/Bangkok">
-                <Homecitydesk title='Bangkok' videosrc='./videos/bangkokmovie.mp4' />
+              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4" to="/home/Berlin">
+                <Homecitydesk title='Berlin' videosrc='./videos/berlinmovie.mp4' />
               </Link>
-              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4"  to="/home/Budapest">
-                <Homecitydesk title='Budapest' videosrc='./videos/budapestmovie.mp4' />
+              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4"  to="/home/Istanbul">
+                <Homecitydesk title='Istanbul' videosrc='./videos/istanbulmovie.mp4' />
               </Link>
-              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4" to="/home/Taipei">
-                <Homecitydesk title='Taipei' videosrc='./videos/taipeimovie.mp4' />
+              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4" to="/home/Medellin">
+                <Homecitydesk title='Medellin' videosrc='./videos/medellinmovie.mp4' />
               </Link>
-              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4" to="/home/SaoPaulo">
-                <Homecitydesk title='São Paulo' videosrc='./videos/spmovie2.mp4' />
+              <Link data-aos="fade-up" className="col-5 homecitydesk-page d-flex align-items-center justify-content-center my-4" to="/home/Tokyo">
+                <Homecitydesk title='Tokyo' videosrc='./videos/tokyomovie.mp4' />
               </Link>
             </div>
           <div className="row d-flex d-md-none ourcities-mobile justify-content-center">
