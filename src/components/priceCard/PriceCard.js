@@ -40,17 +40,17 @@ class PriceCard extends Component {
           </div>
             <div className="form-card__benefits-container">
               <img src="/images/world.svg" alt="world" className="form-card__benefits-container--img"/>
-              <p className="form-card__benefits-container--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p className="form-card__benefits-container--text">{this.props.benefit1}</p>
             </div>
             
             <div className="form-card__benefits-container">
               <img src="/images/airplane.svg" alt="airplane" className="form-card__benefits-container--img"/>
-              <p className="form-card__benefits-container--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>   
+              <p className="form-card__benefits-container--text">{this.props.benefit2}.</p>   
             </div>
   
             <div className="form-card__benefits-container">
               <img src="/images/bed.svg" alt="bed" className="form-card__benefits-container--img"/>
-              <p className="form-card__benefits-container--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p className="form-card__benefits-container--text">{this.props.benefit3}</p>
             </div>
             
             <button className="form-card__btn" plan={this.props.title} onClick={this.props.btnClick} style={this.props.styleBg}>Quero esse plano!</button>

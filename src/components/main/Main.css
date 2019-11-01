@@ -12,10 +12,14 @@
 }
 
 .main-title {
-  font-family: nunito,roboto,proxima-nova,proxima nova,sans-serif;
-  font-size: 4rem;
+  font-size: 8rem;
   color: white;
-  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 900;
+  text-shadow: 0 2px 5px rgba(0,0,0, 1);
 }
 
 .main-city-cards {
@@ -33,20 +37,64 @@
   background-position: center;
   background-size: cover;
   height: 200px;
-  transition: 1s;
-}
-
-.city-cards:hover span{
-  font-size: 5rem;
+  transition: all .3s;
 }
 
 .city-cards span {
   font-weight: 500;
   font-size: 4rem;
   color: white;
-  transition: 1s;
+  transition: all .3s;
+  text-shadow: 0 2px 5px rgba(0,0,0, .8);
+}
+
+.city-cards--bg {
+  width: 100%;
+  height: 100%;
+ transition: all .3s;
+ padding: 0;
+}
+
+.city-cards--wrapper {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.city-cards:hover .city-cards--bg {
+  background-color: rgba(0,0,0, .8);
+}
+
+.city-cards:hover span{
+  font-size: 4.6rem;
 }
 
 .country {
   font-size: 2rem !important;
+}
+
+@media screen and (max-width: 1500px) {
+  .main-title {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .main-header {
+    height: 30vh;
+  }
+
+  .main-title {
+    width: 100%;
+    top: 40%;
+    font-size: 4.2rem;
+    text-align: center;
+  }
 }

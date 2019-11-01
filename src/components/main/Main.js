@@ -50,47 +50,84 @@ class Main extends Component {
         <div className="container-fluid">
           <div className="row main-header">
             <div className="col-12 d-flex align-items-end">
-              <span className="main-title">explore the WORLD</span>
-              <img src="./images/world.svg" alt=""/>
+              <span className="main-title">Explore the World</span>
+              {/* <img src="./images/world.svg" alt=""/> */}
             </div>
           </div>
           <div className="row main-city-cards mt-5 d-flex justify-content-around">
-            <Link to="/home/SaoPaulo" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center" style={{backgroundImage: `url(${this.spImg})`}}>
-              <span>SÃO PAULO</span>
-              <span className="country">Brasil</span>
+            <Link to="/home/SaoPaulo" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center p-0 p-0" style={{backgroundImage: `url(${this.spImg})`}}>
+              <div className="city-cards--bg">
+                <div className="city-cards--wrapper">
+                  <span>SÃO PAULO</span>
+                  <span className="country">Brasil</span>
+                </div> 
+              </div>      
             </Link>
-            <Link to="/home/Bangkok" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center" style={{backgroundImage: `url(${this.bangImg})`}}>
-              <span>BANGKOK</span>
-              <span className="country">Thailand</span>
+            <Link to="/home/Bangkok" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center p-0" style={{backgroundImage: `url(${this.bangImg})`}}>
+              <div className="city-cards--bg">
+                <div className="city-cards--wrapper">
+                  <span>BANGKOK</span>
+                  <span className="country">Thailand</span>
+               </div> 
+              </div>
             </Link>
-            <Link to="/home/Budapest" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center" style={{backgroundImage: `url(${this.budImg})`}}>
-              <span>BUDAPEST</span>
-              <span className="country">Hungary</span>
+            <Link to="/home/Budapest" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center p-0" style={{backgroundImage: `url(${this.budImg})`}}>
+              <div className="city-cards--bg">
+                <div className="city-cards--wrapper">
+                  <span>BUDAPEST</span>
+                  <span className="country">Hungary</span>
+                </div> 
+              </div>
             </Link>
-            <Link to="/home/Taipei" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center" style={{backgroundImage: `url(${this.taiImg})`}}>
-              <span>TAIPEI</span>
-              <span className="country">Taiwan</span>
+            <Link to="/home/Taipei" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center p-0" style={{backgroundImage: `url(${this.taiImg})`}}>
+              <div className="city-cards--bg">
+                <div className="city-cards--wrapper">
+                  <span>TAIPEI</span>
+                  <span className="country">Taiwan</span>
+                </div> 
+              </div>
             </Link>
-            <Link to="/home/Berlin" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center" style={{backgroundImage: `url(${this.berImg})`}}>
-              <span>BERLIN</span>
-              <span className="country">Germany</span>
+            <Link to="/home/Berlin" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center p-0" style={{backgroundImage: `url(${this.berImg})`}}>
+              <div className="city-cards--bg">
+                <div className="city-cards--wrapper">
+                  <span>BERLIN</span>
+                  <span className="country">Germany</span>
+                </div> 
+              </div>
             </Link>
-            <Link to="/home/Medellin" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center" style={{backgroundImage: `url(${this.medImg})`}}>
-              <span>MEDELLIN</span>
-              <span className="country">Colombia</span>
+            <Link to="/home/Medellin" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center p-0" style={{backgroundImage: `url(${this.medImg})`}}>
+              <div className="city-cards--bg">
+                <div className="city-cards--wrapper">
+                  <span>MEDELLIN</span>
+                  <span className="country">Colombia</span>
+                </div> 
+              </div>
             </Link>
-            <Link to="/home/Tokyo" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center" style={{backgroundImage: `url(${this.tokImg})`}}>
-              <span>TOKYO</span>
-              <span className="country">Japan</span>
+            <Link to="/home/Tokyo" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center p-0" style={{backgroundImage: `url(${this.tokImg})`}}>
+              <div className="city-cards--bg">
+                <div className="city-cards--wrapper">
+                  <span>TOKYO</span>
+                  <span className="country">Japan</span>
+                </div> 
+              </div>
             </Link>
-            <Link to="/home/Belgrade" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center" style={{backgroundImage: `url(${this.belImg})`}}>
-              <span>BELGRADE</span>
-              <span className="country">Serbia</span>
+            <Link to="/home/Belgrade" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center p-0" style={{backgroundImage: `url(${this.belImg})`}}>
+              <div className="city-cards--bg">
+                <div className="city-cards--wrapper">
+                  <span>BELGRADE</span>
+                  <span className="country">Serbia</span>
+                </div> 
+              </div>
             </Link>
-            <Link to="/home/Istanbul" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center" style={{backgroundImage: `url(${this.istImg})`}}>
-              <span>ISTANBUL</span>
-              <span className="country">Turkey</span>
+            <Link to="/home/Istanbul" data-aos="fade-up" className="flex-column col-10 col-md-3 city-cards mx-4 my-3 d-flex align-items-center justify-content-center p-0" style={{backgroundImage: `url(${this.istImg})`}}>
+              <div className="city-cards--bg">
+                <div className="city-cards--wrapper">
+                  <span>ISTANBUL</span>
+                  <span className="country">Turkey</span>
+                </div> 
+              </div>
             </Link>
+
           </div>
           
           

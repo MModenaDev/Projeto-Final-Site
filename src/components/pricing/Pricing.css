@@ -57,6 +57,10 @@
     overflow-y: scroll;
   }
 
+  .pricing__fix-width {
+    width: 30rem;
+  }
+
   .pricing-container2 {
     width: 30rem;
     top: 8rem;
