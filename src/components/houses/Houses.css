@@ -10,6 +10,10 @@
   background-position: center;
 }
 
+.right-side {
+  margin-top: 10rem;
+}
+
 .book-room {
   height: 15vh;
   background: linear-gradient(180deg, #FF8514 0%, #D56210 100%);
@@ -89,6 +93,37 @@
 
 .house__side-images--img:hover {
   transform: scale(1.15);
+}
+
+.booking-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.booking-card {
+  width: 20rem;
+  position: relative;
+  min-width: 100px;
+  min-height: 200px;
+  border: 2px solid #FF8514;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+.active-card {
+  box-shadow: 0 0 1.5em black, 0 0 1em #FF8514;;
+}
+
+.booking-title {
+  background-color: #FF8514;
+  color: white;
+  font-size: medium;
+  text-align: center;
+  padding: 10px 10px;
+  border: 1px solid #FF8514;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 @media screen and (max-width: 1500px) {

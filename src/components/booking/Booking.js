@@ -107,39 +107,32 @@ class Booking extends Component {
 
   // ]
 
-  showSlots() {
-    let dateToday = new Date()
-    let dateTodayAdj = dateToday.toString();    
-    let dateTodayNew = new Date(this.adjustDate(dateTodayAdj)+"GMT-0000")
+  // showSlots() {
+  //   let dateToday = new Date()
+  //   let dateTodayAdj = dateToday.toString();    
+  //   let dateTodayNew = new Date(this.adjustDate(dateTodayAdj)+"GMT-0000")
 
-    let arrDateFinish = this.state.dateFinishInput.split('-')
-    let dateFinishInputAdj = new Date(Number(arrDateFinish[0]), Number(arrDateFinish[1]) -1, Number(arrDateFinish[2]), 0, 0, 0);
-    let dateFinishInputNew = new Date(this.adjustDate(dateFinishInputAdj)+"GMT-0000")
+  //   let arrDateFinish = this.state.dateFinishInput.split('-')
+  //   let dateFinishInputAdj = new Date(Number(arrDateFinish[0]), Number(arrDateFinish[1]) -1, Number(arrDateFinish[2]), 0, 0, 0);
+  //   let dateFinishInputNew = new Date(this.adjustDate(dateFinishInputAdj)+"GMT-0000")
 
-    let arrDateStart = this.state.dateStartInput.split('-')
-    let dateStartInputAdj = new Date(Number(arrDateStart[0]), Number(arrDateStart[1]) -1, Number(arrDateStart[2]), 0, 0, 0);
-    let dateStartInputNew = new Date(this.adjustDate(dateStartInputAdj)+"GMT-0000")
+  //   let arrDateStart = this.state.dateStartInput.split('-')
+  //   let dateStartInputAdj = new Date(Number(arrDateStart[0]), Number(arrDateStart[1]) -1, Number(arrDateStart[2]), 0, 0, 0);
+  //   let dateStartInputNew = new Date(this.adjustDate(dateStartInputAdj)+"GMT-0000")
 
-    return this.state.slots.map((slot, idx) => {      
-      let dateStartAdj = slot.dateStart.toString();
-      let dateStartNew = new Date(this.adjustDate(dateStartAdj)+"GMT-0300")      
-
-      let dateFinishAdj = slot.dateFinish.toString();
-      let dateFinishNew = new Date(this.adjustDate(dateFinishAdj)+"GMT-0300")
-      
-      if (dateFinishInputNew = "" && dateStartNew >= dateTodayNew && dateFinishNew <= dateFinishInputAdj) { 
-        return (
-          <div key={idx} className={(this.state.activeStart) ? "booking-card" : "booking-card active-card"} id={idx} onClick={(e, idx) => this.activeCard(e, idx)}>
-            <h1 className="booking-title">{this.adjustDateShow(dateStartAdj)}</h1>
-            <div className="booking-content">
-              <span>{slot.usersBooked.length + '/'}</span>
-              <span>{slot.house.maxBooking}</span>
-            </div>
-          </div>
-        )
-      }
-    })    
-  }
+  //   return this.state.slots.map((slot, idx) => { 
+  //     return (
+  //       <div key={idx} className={(this.state.activeStart) ? "booking-card" : "booking-card active-card"} id={idx} onClick={(e, idx) => this.activeCard(e, idx)}>
+  //         <h1 className="booking-title">{this.adjustDateShow(dateStartAdj)}</h1>
+  //         <div className="booking-content">
+  //           <span>{slot.usersBooked.length + '/'}</span>
+  //           <span>{slot.house.maxBooking}</span>
+  //         </div>
+  //       </div>
+  //       )
+  //     })
+  //   }
+  
 
 
 

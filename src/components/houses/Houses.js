@@ -15,7 +15,11 @@ class Houses extends Component {
       isLoading: false,
       house: {images: []},
       bgImg: '/images/places.png',
-      canRender: false
+      canRender: false,
+      dateStartInput: '',
+      dateFinishInput: '',
+      slots: [],
+      loadSlots: false,
     }
 
     this.id = this.props.match.params.id
@@ -23,6 +27,9 @@ class Houses extends Component {
     this.getHouse = this.getHouse.bind(this)
     this.arrayOfImages = []
     this.bgImage = this.bgImage.bind(this)
+    this.setSlots = this.setSlots.bind(this)
+    this.onChangeHandler = this.onChangeHandler.bind(this)
+    this.updateBooking = this.updateBooking.bind(this)
   }
 
   componentDidMount(){
@@ -42,6 +49,40 @@ class Houses extends Component {
         this.setState({house: response.data, isLoading: false}, () => this.bgImage())
       })
       .catch(err => console.log(err))
+  }
+
+  adjustMonth(month) {    
+    switch (month) {
+      case 'Jan':
+        return '01'
+      case 'Feb':
+        return '02'
+      case 'Mar':
+        return '03'
+      case 'Apr':
+        return '04'
+      case 'May':
+        return '05'
+      case 'Jun':
+        return '06'
+      case 'Jul':
+        return '07'
+      case 'Aug':
+        return '08'
+      case 'Sep':
+        return '09'
+      case 'Oct':
+        return '10'
+      case 'Nov':
+        return '11'
+      case 'Dec':
+        return '12'  
+      }    
+  }
+
+  adjustDateShow(date) {
+    let dateArr = date.split(' ');
+    return this.adjustMonth(dateArr[1]) + "-" + dateArr[2]  + "-" + dateArr[3]
   }
 
   // bgImage() {
@@ -64,6 +105,39 @@ class Houses extends Component {
     })
   }
 
+  setSlots() {
+    this.setState({loadSlots: true})
+  }
+
+  getBookings(e) {
+    this.setState({isLoading: true})
+    Axios.get(`https://projfinal-dev.herokuapp.com/api/booking/search/${this.id}?dateStart=${this.state.dateStartInput}&dateFinish=${this.state.dateFinishInput}`)
+      .then(response => {
+        console.log(response);
+        this.setState({slots: response.data, isLoading: false}, () => this.setSlots())
+      })
+      .catch(err => console.log(err))
+  }
+
+  updateBooking(e) {
+
+  }
+
+  showBookings() {
+    // this.setState({loadSlots: false})
+    return this.state.slots.map((slot, idx) => {      
+      return (
+        <div key={idx} className="booking-card" id={idx}>
+          <h1 className="booking-title">{this.adjustDateShow(slot.dateStart)}</h1>
+          <div className="booking-content">
+            <span>{slot.usersBooked.length + '/'}</span>
+            <span>{slot.house.maxBooking}</span>
+          </div>
+        </div>
+        )
+      })
+  }
+
   handleImgActive = (e) => {
     console.log(e.target);
     this.setState({bgImg: e.target.src});
@@ -75,6 +149,13 @@ class Houses extends Component {
 
     e.target.classList.add("house__side-images--img-active");
   }
+
+  onChangeHandler(e)  {
+    let { name, value, type, checked } = e.target;
+    value = (type==="checkbox")?checked:value;
+    console.log(value);    
+    this.setState({ [name]: value })
+} 
 
   render(){
     // let arrayOfImages = [
@@ -113,16 +194,25 @@ class Houses extends Component {
                     </div>
                   </div>
                 </div>
-                <Link to={`/home-details/${this.state.house._id}/booking`}>
+                <Link to={`/profile`}>
                   <div className="col-12 d-flex justify-content-center book-room align-items-center">
-                    <span>RESERVAR QUARTO</span>
+                    <span onClick={(e) => this.updateBooking(e)}>RESERVAR QUARTO</span>
                   </div>
                 </Link>
               </div>
 
             </div>
             <div className="col-6 right-side">
-              
+              <div>
+                <label for="dateStart">Date Start:</label>
+                <input type="date" name="dateStartInput" placeholder="YYYY/MM/DD" value={this.state.dateStart} onChange={(e) => this.onChangeHandler(e)}/>
+                <label for="dateFinish">Date Finish:</label>
+                <input type="date" name="dateFinishInput" placeholder="YYYY/MM/DD" value={this.state.dateFinish} onChange={(e) => this.onChangeHandler(e)}/>
+                <button onClick={(e) => this.getBookings(e)}>Search</button>
+              </div>
+              <div className="booking-container">
+                {this.showBookings()}
+              </div>
             </div>
           </div>
         </div>
