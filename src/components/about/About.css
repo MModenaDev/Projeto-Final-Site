@@ -1,0 +1,24 @@
+.about-page {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/images/bg2.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+.about-div {
+  height: 70vh;
+  background-color: rgba(255, 255, 255, 0.432);
+}
+
+.img-about {
+  width: 90%;
+}
+
+.about-text {
+  font-size: 2rem;
+}

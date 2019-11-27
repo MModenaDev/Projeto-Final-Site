@@ -1,0 +1,20 @@
+.homecitymob {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+}
+
+.homecitymob h1 {
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 49px;
+  text-align: center;
+  text-shadow: 0px 2px 10px rgba(0, 0, 0, 1);
+}
+
+.margin-negative {
+  margin-top: -120px !important;
+}

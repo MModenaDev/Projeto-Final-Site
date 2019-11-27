@@ -1,0 +1,43 @@
+.ourcities-page {
+  background-image: url('/images/bg2.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+}
+
+.ourcities-page2 {
+  background-color: rgba(255, 255, 255, 0.411);
+  height: 100%;
+  width: 100%;
+  padding-top: 14rem;
+  padding-bottom: 10rem;
+}
+
+.homecitydesk-page {
+  background-size: cover;
+  background-position: center;
+  height: 295px;
+  text-align: center;
+  
+}
+
+.homecitydesk-page h1 {
+  color: white;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 49px;
+  text-align: center;
+  text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+.ourcities-mobile {
+  background-color: rgba(255, 255, 255, 0.411);
+  height: 100%;
+  width: 100%;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}

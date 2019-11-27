@@ -1,0 +1,26 @@
+.footer {
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.15);
+  height: 8rem;
+}
+
+
+.foot-img img { 
+  width: 3rem;
+}
+
+.footer-text {
+  font-size: 1.1rem !important;
+  color: #BDBDBD;
+  text-decoration: none;
+  text-align: center;
+}
+
+.active span, img{
+  color: #F96040
+}
+
+a:hover{
+  text-decoration: none;
+}

@@ -1,0 +1,100 @@
+.main-page {
+  height: 100vh;
+  width: 100vw;
+}
+
+.main-header {
+  height: 40vh;
+  width: 100%;
+  background-image: url('/images/mainpagebg.jpg');
+  background-position: 50% 80%;
+  background-size: cover;
+}
+
+.main-title {
+  font-size: 8rem;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 900;
+  text-shadow: 0 2px 5px rgba(0,0,0, 1);
+}
+
+.main-city-cards {
+  height: auto;
+  margin-bottom: 15vh;
+}
+
+.main-header img {
+  height: 35%;
+  margin-left: 2rem;
+}
+
+.city-cards {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+  transition: all .3s;
+}
+
+.city-cards span {
+  font-weight: 500;
+  font-size: 4rem;
+  color: white;
+  transition: all .3s;
+  text-shadow: 0 2px 5px rgba(0,0,0, .8);
+}
+
+.city-cards--bg {
+  width: 100%;
+  height: 100%;
+ transition: all .3s;
+ padding: 0;
+}
+
+.city-cards--wrapper {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.city-cards:hover .city-cards--bg {
+  background-color: rgba(0,0,0, .8);
+}
+
+.city-cards:hover span{
+  font-size: 4.6rem;
+}
+
+.country {
+  font-size: 2rem !important;
+}
+
+@media screen and (max-width: 1500px) {
+  .main-title {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .main-header {
+    height: 30vh;
+  }
+
+  .main-title {
+    width: 100%;
+    top: 40%;
+    font-size: 4.2rem;
+    text-align: center;
+  }
+}
